@@ -1,10 +1,9 @@
 <!-- BARRA DE PROGRESO CIRCULAR -->
 
 <div class="container">
-
-  <div class="circle" data-degree="70">
-    <h2 class="number">70</h2>
+  <div class="circle" [ngStyle]="circleStyle">
+    <h2 class="number">{{ degree }}</h2>
     <h4>°C</h4>
   </div>
-
 </div>
+

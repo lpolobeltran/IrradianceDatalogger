@@ -1,0 +1,85 @@
+@use "../../../../public/styles.scss"; // ../ Hace que desde donde estoy me ubique en en nivel de src y de alli elijo el archivo
+
+
+.card{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 280px;
+  height: 200px;
+  background-color: styles.$color-white;
+  border-radius: styles.$card-border-radius;
+  box-shadow: styles.$box-shadow;
+  transition: all 300ms ease; //investigar
+}
+
+.card:hover{
+  box-shadow: none;
+}
+
+.card__left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card__rigth{
+  display: flex;
+height: 100%;
+width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+$tamanio-circle: 72px;
+.card__rigth svg{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card__rigth svg circle{
+  // transform: translate(5px, 5px);
+  fill: none; // define el color de relleno del objeto
+  stroke: styles.$color-primary;
+  stroke-width: 14; // Define el grosor del borde del objeto
+  stroke-linecap: round; // extremos del borde serán redondeados, dándole un acabado más suave
+  // stroke-dasharray: 800;
+  // stroke-dashoffset: 0;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 157;
+  // width: 100%;
+  // height: 300px;
+}
+
+.card__left span{
+
+  background-color: styles.$color-danger;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+
+}
+
+.card__left h3{
+  font-size: 1rem;
+}
+
+.card__rigth__number{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // z-index: -3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

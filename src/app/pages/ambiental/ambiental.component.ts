@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { GoogleSheetsService } from './../../services/google-sheets.service';
+import { GoogleSheetsService } from '../../services/google-sheets.service';
 import { Component, OnInit } from '@angular/core'; // Se importa OnInit para poder usarlo
-import { BarraCircularComponent } from '../../components/barra-circular/barra-circular.component';
+import { MenuComponent } from '../../components/menu/menu.component';
+import { CardComponent } from "../../components/card/card.component";
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-ambiental',
   standalone: true,
-  imports: [CommonModule, BarraCircularComponent], // Necesario para
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  imports: [CommonModule, MenuComponent, CardComponent], // Necesario para
+  templateUrl: './ambiental.component.html',
+  styleUrl: './ambiental.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class AmbientalComponent implements OnInit {
   public data: any[] = []; // Variable para almacenar los datos que vienen del servicio
 
   constructor(private googleSheetsService: GoogleSheetsService) {}

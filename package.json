@@ -20,6 +20,8 @@
     "@angular/router": "^18.2.0",
     "ng-circle-progress": "^1.7.1",
     "ngx-circle-progress": "^6.0.2",
+    "primeicons": "^7.0.0",
+    "primeng": "^17.18.12",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { AmbientalComponent } from './pages/ambiental/ambiental.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MenuComponent } from './components/menu/menu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent],
+  imports: [RouterOutlet, AmbientalComponent, FormsModule, CommonModule, MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

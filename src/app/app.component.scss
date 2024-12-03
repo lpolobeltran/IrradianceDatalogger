@@ -2,7 +2,16 @@
   display: grid;
   width: 96%;
   height: 100%;
-  margin: 0 auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
   gap: 0.5rem;
   grid-template-rows: 10vh 10vh auto;
 }
+
+
+main{
+  display: flex;
+  justify-content: center;
+}
+

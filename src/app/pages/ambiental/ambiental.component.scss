@@ -8,3 +8,9 @@
   list-style: none; // Se utiliza para eliminar los puntos o los números que se muestran por defecto al usar <ul> o <ol>
   box-sizing: border-box;
 }
+
+div{
+  display: flex;
+  gap: 100px;
+  justify-content: space-evenly;
+}

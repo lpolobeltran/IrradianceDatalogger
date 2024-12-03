@@ -1,8 +1,19 @@
+<div  class="ambiental">
 
-<div  >
+  <div class="ambiental__top">
+    <app-card [temperature]="temperature"></app-card>
+    <app-card [temperature]="temperature"></app-card>
+    <app-card [temperature]="temperature"></app-card>
+    <app-card [temperature]="temperature"></app-card>
+  </div>
+  <div class="ambiental__bottom">
+    <app-card [temperature]="temperature"></app-card>
+    <app-card [temperature]="temperature"></app-card>
+  </div>
 
-  <app-card [temperature]="temperature"></app-card>
-  <app-card></app-card>
+  <!-- <div class="ambiental__bottom">
+    <app-card [temperature]="temperature"></app-card>
+  </div> -->
   <!-- <div *ngIf="data.length > 0; else noData">
     <table>
       <thead>

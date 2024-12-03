@@ -9,8 +9,34 @@
   box-sizing: border-box;
 }
 
-div{
+.ambiental{
+  display: grid;
+  grid-template-rows: 0.3fr 0.5fr;
+  gap: 50px;
+  // justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.ambiental__top{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
+  justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
+  // flex-direction: column;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.ambiental__bottom{
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr; /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
+
+  justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
+
+
+
+}
+app-card{
+  width: 280px;
   display: flex;
-  gap: 100px;
-  justify-content: space-evenly;
+  justify-content: center;
 }

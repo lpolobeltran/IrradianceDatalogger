@@ -44,49 +44,35 @@
 }
 
 .card__rigth svg circle{
-  // transform: translate(5px, 5px);
   fill: none; // define el color de relleno del objeto
-  // stroke: styles.$color-primary;
   stroke-width: 14; // Define el grosor del borde del objeto
   stroke-linecap: round; // extremos del borde serán redondeados, dándole un acabado más suave
-  // stroke-dasharray: 800;
-  // stroke-dashoffset: 0;
-  // stroke-dasharray: 314;
-  // stroke-dashoffset: 157;
-  // width: 100%;
-  // height: 300px;
-
-}
-
-// Funcion para calcular el progreso
-@function progress($percentage) {
-  // Circunferencia del círculo
-  $circumference: 251.2px; // 2 * Math.PI * 40
-  // Calculamos el stroke-dashoffset en función del porcentaje
-  $dashoffset: $circumference * (1 - math.div($percentage, 100));
-  @return $dashoffset;
 }
 
 svg circle.bg{
   stroke: styles.$color-white;
-  // transform: rotate(-90deg);  // Rotar el círculo para que comience en la parte superior (12 en punto)
 }
+
+// :root {
+//   // --main-color: yellow;
+//   --dashoffset:0;
+// }
 
 svg circle.meter{
   stroke: styles.$color-primary;
-  stroke-dashoffset: progress(50); // Cambia este valor para el porcentaje que deseas (0-100)
+  stroke-dashoffset: var(--dashoffset); // Cambia este valor para el porcentaje que deseas (0-100)
   stroke-dasharray: 251.2px;
-  animation: prog 10s linear forwards,
-              glow 2s 8s ease-in-out forwards;
+  animation: prog 4s linear forwards,
+              glow 2s 2s ease-in-out forwards;
 
 }
 
 @keyframes prog{
-  0% {stroke-dashoffset: progress(0);}
-  10% {stroke-dashoffset: progress(10);}
-  20% {stroke-dashoffset: progress(15);}
-  30% {stroke-dashoffset: progress(20);}
-  100% {stroke-dashoffset: progress(90);}
+  0% {stroke-dashoffset: 251.2px;}
+  // 10% {stroke-dashoffset: progress(10);}
+  // 20% {stroke-dashoffset: progress(15);}
+  // 30% {stroke-dashoffset: progress(20);}
+  100% {stroke-dashoffset: var(--dashoffset);}
 }
 
 @keyframes glow{
@@ -122,61 +108,3 @@ svg circle.meter{
 
 
 }
-
-
-
-
-
-
-// .card__rigth {
-//   position: relative;
-//   width: 200px;
-//   height: 200px;
-
-//   svg {
-//     padding: 0;
-//     margin: 0;
-//     width: 100%;
-//     height: 100%;
-//   }
-
-//   svg circle {
-//     fill: none; // Sin relleno
-//     stroke-width: 14; // Grosor de la barra
-//     stroke-linecap: round; // Bordes redondeados
-//   }
-
-//   // Fondo de la barra
-//   svg circle.bg {
-//     stroke: #d3d3d3; // Color del fondo
-//     stroke-dasharray: 251.2; // Circunferencia completa
-//     stroke-dashoffset: 0; // Fondo siempre completo
-//   }
-
-//   // Barra de progreso animada
-//   svg circle.meter {
-//     stroke: #ff7a59; // Color de la barra de progreso
-//     stroke-dasharray: 251.2; // Circunferencia completa
-//     stroke-dashoffset: 251.2; // Inicia vacío
-//     animation: prog 2s ease-out forwards; // Animación de progreso
-//   }
-
-//   .card__rigth__number {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-size: 1.5rem;
-//     font-weight: bold;
-//   }
-// }
-
-// // Animación del progreso
-// @keyframes prog {
-//   from {
-//     stroke-dashoffset: 251.2; // Comienza vacío
-//   }
-//   to {
-//     stroke-dashoffset: calc(251.2 - (251.2 * 0.4)); // 40% del progreso
-//   }
-// }

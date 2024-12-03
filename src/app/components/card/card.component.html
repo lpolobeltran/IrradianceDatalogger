@@ -11,12 +11,12 @@
   </div>
 
   <div class="card__rigth">
-    <svg>
+    <svg [style.--dashoffset]="calculateDashOffset(temperature)">
       <circle class="bg" cx="70" cy="100" r="40"/>
       <circle class="meter" cx="70" cy="100" r="40"/>
     </svg>
     <div class="card__rigth__number">
-      <p>30°C</p>
+      <p> {{temperature}} °C</p>
     </div>
   </div>
 

@@ -18,14 +18,13 @@ Chart.register(
   standalone: true,
   selector: 'app-grafic',
   imports: [CommonModule],
-  template: `
-    <canvas id="myChart" width="400" height="200"></canvas>
-  `,
+  templateUrl: './grafic.component.html',
+  styleUrl: './grafic.component.scss'
 })
 export class GraficComponent implements AfterViewInit {
   ngAfterViewInit() {
     // Obtén el contexto del canvas
-    const ctx = (document.getElementById('myChart') as HTMLCanvasElement).getContext('2d');
+    const ctx = (document.getElementById('grafic') as HTMLCanvasElement).getContext('2d');
 
     // Verifica que el contexto exista antes de continuar
     if (ctx) {

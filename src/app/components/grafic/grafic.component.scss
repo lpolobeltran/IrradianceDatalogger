@@ -1,20 +1,15 @@
 // ESTILO DE GRAFICOS DE ANALISIS
 
-// @use "../../../../public/styles.scss";
+@use "../../../../public/styles.scss";
 
-// // ----------------------------
+// ----------------------------
 
-// canvas#grafic{
-//   background-color: styles.$color-white;
-//   max-width: 100%;
-//   margin-top: 2rem;
-//   border-radius: styles.$card-border-radius;
-//   padding: styles.$card-padding;
+canvas#grafic{
+  background-color: styles.$color-white;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 2rem;
+  border-radius: styles.$card-border-radius;
+  padding: styles.$card-padding;
 
-// }
-
-canvas {
-  border: 1px solid #000;
-  width: 100%; /* Asegúrate de que el canvas ocupe el tamaño del contenedor */
-  height: 100%;
 }

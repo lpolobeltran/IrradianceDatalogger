@@ -1,3 +1,4 @@
+import { GraficComponent } from './../../components/grafic/grafic.component';
 import { CommonModule } from '@angular/common';
 import { GoogleSheetsService } from '../../services/google-sheets.service';
 import { Component, OnInit } from '@angular/core'; // Se importa OnInit para poder usarlo
@@ -7,7 +8,7 @@ import { CardComponent } from "../../components/card/card.component";
 @Component({
   selector: 'app-ambiental',
   standalone: true,
-  imports: [CommonModule, CardComponent], // Necesario para
+  imports: [CommonModule, CardComponent, GraficComponent], // Necesario para
   templateUrl: './ambiental.component.html',
   styleUrl: './ambiental.component.scss'
 })

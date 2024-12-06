@@ -1,3 +1,5 @@
+@use "../../../../public/styles.scss";
+
 *{
   margin: 0;
   padding: 0;
@@ -15,7 +17,16 @@
   align-items: center;
 }
 .comparacion-irradiancia div{
-  // background-color:;
-  width: 600px;
-  height: 300px;
+  width: 900px;
+  height: 450px;
+  background-color: styles.$color-white;
+  border-radius: styles.$card-border-radius;
+  box-shadow: styles.$box-shadow;
+  transition: all 300ms ease;
+  margin-top: 20px;
 }
+
+.comparacion-irradiancia div:hover {
+  box-shadow: none;
+}
+

@@ -18,19 +18,19 @@
     <div class="filtros">
 
       <div>
-        <button>
+        <button (click)="showComponent('home')">
           <p>Home</p>
         </button>
       </div>
 
       <div>
-        <button>
+        <button (click)="showComponent('ambientales')">
           <p>Parámetros ambientales</p>
         </button>
       </div>
 
       <div>
-        <button>
+        <button (click)="showComponent('electricos')">
           <p>
             Parámetros eléctricos
           </p>
@@ -38,7 +38,7 @@
       </div>
 
       <div>
-        <button>
+        <button (click)="showComponent('historialAmbientales')">
           <p>
             Historial de parámetros ambientales
           </p>
@@ -46,7 +46,7 @@
       </div>
 
       <div>
-        <button>
+        <button (click)="showComponent('historialElectricos')">
           <p>
             Historial de parámetros eléctricos
           </p>
@@ -54,14 +54,14 @@
       </div>
 
       <div>
-        <button>
+        <button (click)="showComponent('comparacionIrradiancia')">
           <p>
             Comparación de irradiancia
           </p>
         </button>
       </div>
       <div>
-        <button>
+        <button (click)="showComponent('intervaloMuestreo')">
           <p>
             Intervalo de muestreo
           </p>
@@ -73,8 +73,10 @@
     <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!-- SECCION AL SELECCIONAR FILTRO -->
-    <app-home></app-home>
-
+    <!-- <app-home></app-home> -->
+    <app-home *ngIf="activeComponent === 'home'"></app-home>
+    <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
+    <!-- Agrega otros componentes según sea necesario -->
     <!--------------------------------------------------------------------------------------------------------------------------->
 
   </div>

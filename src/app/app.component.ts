@@ -9,10 +9,15 @@ import { ComparacionIrradianciaComponent } from "./pages/comparacion-irradiancia
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, FormsModule, CommonModule, MenuComponent, ComparacionIrradianciaComponent],
+  imports: [RouterOutlet, HomeComponent, FormsModule, CommonModule, ComparacionIrradianciaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'borrador';
+
+  activeComponent: string = 'home'; // Valor inicial
+
+  showComponent(component: string) {
+    this.activeComponent = component;
+  }
 }

@@ -19,16 +19,17 @@
 }
 
 .home__top{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
+  display: flex;
+  justify-content: space-between;
+   /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
   justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
   // flex-direction: column;
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 
 .home__bottom{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
+  display: flex;
+  justify-content: space-between;
 
   justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
 

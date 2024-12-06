@@ -1,3 +1,5 @@
+@use "../../public/styles.scss";
+
 .panel{
   display: grid;
   width: 96%;
@@ -25,20 +27,30 @@ main{
 }
 
 .filtros div{
-  background-color: #e5e5e5;
-  border-radius: 1rem;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  display: inline-flex; /* Permite que el ancho se ajuste al contenido, ya que No ocupa el ancho completo de su contenedor padre, solo el necesario. */
-  padding: 0px 10px; /* Espaciado interno para hacerlo más grande */
   margin: 5px; /* Separación entre los botones */
   height: 35px;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex; /* Permite que el ancho se ajuste al contenido, ya que No ocupa el ancho completo de su contenedor padre, solo el necesario. */
 }
 
 .filtros div button{
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: #e5e5e5;
+  padding: 0px 10px; /* Espaciado interno para hacerlo más grande */
+  border-radius: 1rem;
+  border: none;
+  outline: none; /* Elimina el borde del enfoque */
   width: 100%;
   height: 100%;
+  font-family:  'poppins', sans-serif;
+  font-size: 12px;
+  color: black;
+  // font-weight: 200;
+  z-index: 4;
 }
 
 app-home{

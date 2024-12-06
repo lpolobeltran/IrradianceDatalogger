@@ -28,7 +28,7 @@
 
 .ambiental__bottom{
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr; /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
 
   justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
 

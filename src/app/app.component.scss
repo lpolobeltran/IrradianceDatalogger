@@ -6,7 +6,7 @@
   border: 0;
   padding: 0;
   gap: 0.5rem;
-  grid-template-rows: 8vh 8vh auto;
+  grid-template-rows: 10vh 8vh auto;
 }
 
 
@@ -17,3 +17,25 @@ main{
   height: 100%;
 }
 
+.filtros{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  height: 100%;
+}
+
+.filtros div{
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  display: inline-flex; /* Permite que el ancho se ajuste al contenido, ya que No ocupa el ancho completo de su contenedor padre, solo el necesario. */
+  padding: 0px 10px; /* Espaciado interno para hacerlo más grande */
+  margin: 5px; /* Separación entre los botones */
+  height: 35px;
+}
+
+app-ambiental{
+  margin-top: 20px;
+}

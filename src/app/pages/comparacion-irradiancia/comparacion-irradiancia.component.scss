@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0; // elimina el contorno (o borde) que aparece alrededor de un elemento cuando está enfocado
+  appearance: none; // le estás diciendo al navegador que no utilice los estilos predeterminados para ese elemento Se usa comúnmente en elementos como input, select, button, etc.
+  border: 0;
+  text-decoration: none; //  se usa para eliminar cualquier estilo de decoración de texto predeterminado, como subrayado, tachado o sobrelineado
+  list-style: none; // Se utiliza para eliminar los puntos o los números que se muestran por defecto al usar <ul> o <ol>
+  box-sizing: border-box;
+}
+
+.comparacion-irradiancia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comparacion-irradiancia div{
+  // background-color:;
+  width: 600px;
+  height: 300px;
+}

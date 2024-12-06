@@ -1,12 +1,12 @@
-<div  class="ambiental">
+<div  class="home">
 
-  <div class="ambiental__top">
+  <div class="home__top">
     <app-card [data]="{titulo: 'Temperatura externa', stroke:'blue', temperatura:temperatura }"></app-card>
     <app-card [data]="{titulo: 'Humedad', stroke:'blue', temperatura:temperatura}"></app-card>
     <app-card [data]="{titulo: 'Temperatura interna', stroke:'blue', temperatura:temperatura}"></app-card>
     <app-card [data]="{titulo: 'Corriente', stroke:'blue', temperatura:temperatura}"></app-card>
   </div>
-  <div class="ambiental__bottom">
+  <div class="home__bottom">
     <app-card [data]="{titulo: 'Voltaje', stroke:'blue', temperatura:temperatura}"></app-card>
     <app-card [data]="{titulo: 'Irradiancia patrón', stroke:'blue', temperatura:temperatura}"></app-card>
     <app-card [data]="{titulo: 'Irradiancia prototipo', stroke:'blue', temperatura:temperatura}"></app-card>
@@ -15,7 +15,7 @@
 <div class="ooo">
   <app-grafic></app-grafic>
 </div>
-  <!-- <div class="ambiental__bottom">
+  <!-- <div class="home__bottom">
     <app-card [temperature]="temperature"></app-card>
   </div> -->
   <!-- <div *ngIf="data.length > 0; else noData">

@@ -6,13 +6,13 @@ import { CardComponent } from "../../components/card/card.component";
 
 
 @Component({
-  selector: 'app-ambiental',
+  selector: 'app-home',
   standalone: true,
   imports: [CommonModule, CardComponent, GraficComponent], // Necesario para
-  templateUrl: './ambiental.component.html',
-  styleUrl: './ambiental.component.scss'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class AmbientalComponent implements OnInit {
+export class HomeComponent implements OnInit {
   public temperatura: number = 0; // Último valor de la temperatura
 
   constructor(private googleSheetsService: GoogleSheetsService) { }

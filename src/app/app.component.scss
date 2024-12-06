@@ -34,6 +34,14 @@ main{
   display: inline-flex; /* Permite que el ancho se ajuste al contenido, ya que No ocupa el ancho completo de su contenedor padre, solo el necesario. */
 }
 
+.filtros div:first-child{
+  margin-left: 0;
+}
+
+.filtros div:last-child{
+  margin-right: 0;
+}
+
 .filtros div button{
   font-weight: 600;
   display: flex;

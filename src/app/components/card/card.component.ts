@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   // @Input() temperature: number = 0; // Valor predeterminado en caso de no recibir entrada
-  @Input() data!: { titulo: string; stroke: string,  temperatura?: number, humedad?:number }; // Escucha un objeto con múltiples valores
+  @Input() data!: { titulo: string; stroke: string,  temperatura?: number, humedad?:number, svg:string }; // Escucha un objeto con múltiples valores
 
   /* En TypeScript, todas las propiedades deben ser inicializadas antes de usarse. Si declaras una propiedad sin inicializarla,
   TypeScript asume que podría ser undefined, lo cual puede causar errores en tiempo de compilación. Angular asignará el valor más

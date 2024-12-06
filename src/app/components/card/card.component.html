@@ -1,13 +1,20 @@
 <div class="card">
 
   <div class="card__left">
-    <h3> {{data.titulo}} </h3>
+    <div class="item">
 
-    <div>
       <span class="material-symbols-outlined">
-        thermometer
+        {{data.svg}}
       </span>
+
+
     </div>
+
+    <h3 class="item"> {{data.titulo}} </h3>
+
+    <h1 class="item"> {{data.temperatura}}°C </h1>
+
+    <p class="item">Tiempo real</p>
   </div>
 
   <div class="card__rigth">

@@ -83,14 +83,14 @@ export class GraficComponent implements AfterViewInit {
           labels: labels,  // Etiquetas del eje X
           datasets: [
             {
-              label: 'Irradiance Rika',
+              label: 'Irradiancia Patrón',
               data: datosRika,  // Datos de la primera serie
               borderColor: 'red',      // Color de la línea
               backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la línea (transparente)
               fill: true,              // Rellenar el área bajo la línea
             },
             {
-              label: 'Irradiance Prototipo',
+              label: 'Irradiancia Prototipo',
               data: datosProt,  // Datos de la segunda serie
               borderColor: 'blue',     // Color de la línea
               backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la línea (transparente)

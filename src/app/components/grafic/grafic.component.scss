@@ -9,7 +9,10 @@ canvas#grafic{
   max-width: 100%;
   max-height: 100%;
   border-radius: styles.$card-border-radius;
-  padding: styles.$card-padding;
+  padding-top: styles.$card-padding;
+  padding-left: styles.$card-padding;
+  padding-right: styles.$card-padding;
+  padding-bottom: 0;
   font-size: styles.$main-font;
 }
 

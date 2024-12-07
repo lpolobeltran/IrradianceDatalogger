@@ -13,10 +13,31 @@
 
 .comparacion-irradiancia{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // grid-template-columns: 20% 80%;
+  // justify-content: ;
+  justify-content: space-around;
+  // align-items: center;
+  width: 100%;
 }
-.comparacion-irradiancia div{
+
+.comparacion-irradiancia__left {
+  width: 20%;
+  height: 470px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // gap: 20px;
+  // align-items: baseline;
+  // justify-items: end;
+}
+
+app-card {
+  width: 280px;
+  height: 200px;
+}
+
+.comparacion-irradiancia .comparacion-irradiancia__rigth {
   width: 900px;
   height: 450px;
   background-color: styles.$color-white;
@@ -26,7 +47,7 @@
   margin-top: 20px;
 }
 
-.comparacion-irradiancia div:hover {
-  box-shadow: none;
-}
+// .comparacion-irradiancia__rigth:hover {
+//   box-shadow: none;
+// }
 

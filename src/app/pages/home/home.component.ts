@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { GoogleSheetsService } from '../../services/google-sheets.service';
-import { Component, OnInit, signal, effect } from '@angular/core'; // Se importa OnInit para poder usarlo
+import { Component, OnInit} from '@angular/core'; // Se importa OnInit para poder usarlo
 import { CardComponent } from "../../components/card/card.component";
-  
+
 @Component({
   selector: 'app-home',
   standalone: true,

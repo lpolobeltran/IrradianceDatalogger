@@ -115,7 +115,7 @@
 }
 
 svg circle.bg{
-  stroke: var(--color1);
+  stroke: styles.$color-white;
 }
 
 // :root {
@@ -124,7 +124,7 @@ svg circle.bg{
 // }
 
 svg circle.meter{
-  stroke: var(--color1);
+  stroke: styles.$color-primary;
   stroke-dashoffset: var(--dashoffset); // Cambia este valor para el porcentaje que deseas (0-100)
   stroke-dasharray: 251.2px;
   animation: prog 4s linear forwards,

@@ -14,21 +14,24 @@ import { CardComponent } from '../../components/card/card.component';
 export class ComparacionIrradianciaComponent  {
 
   public temperatura: number = 0; // Último valor de la temperatura
+  public humedad: number = 0; // Último valor de la temperatura
 
   // Inyeccion del servicio "GoogleSheetsService"
-  constructor(
-    private googleSheetsService: GoogleSheetsService,  // Servicio de Google Sheets
-  ) { }
+  constructor(private googleSheetsService: GoogleSheetsService) { } // Servicio de Google Sheets
 
-  // ngOnInit(): void {
 
-  //   this.googleSheetsService.getDataWithPolling(5000).subscribe({
-  //     next: (data) => {
-  //       const latestRow = data[data.length - 1]; // Asume que la última fila tiene el dato más reciente
-  //       this.temperatura = latestRow[1]; // Cambia [1] por el índice de la columna que contiene la temperatura
-  //     },
-  //     error: (err) => console.error('Error al obtener datos:', err),
-  //   });
+  ngOnInit(): void {
+    // Nos suscribimos al observable que emite los datos actualizados
+    this.googleSheetsService.latestTemperature.subscribe({
+      next: (data) => {
+        if (data && data.length) {
+          const latestRow = data[data.length-1]; // Ubicarse en la última fila de los datos que se reciben en el array data
+          this.temperatura = latestRow[1]; // Ubicarse en la columna 2
+          this.humedad = latestRow[2]; // Ubicarse en la columna 2
+        }
+      },
+      error: (err) => console.error('Error al obtener datos:', err),
+    });
+  }
 
-  // }
 }

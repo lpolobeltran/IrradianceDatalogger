@@ -12,13 +12,13 @@
 
     <h3 class="item"> {{data.titulo}} </h3>
 
-    <h1 class="item"> {{data.temperatura}}°C </h1>
+    <h1 class="item"> {{data.temperatura || data.humedad}}°C </h1>
 
     <p class="item">Tiempo real</p>
   </div>
 
   <div class="card__rigth">
-    <svg [style.--dashoffset]="calculateDashOffset(data.temperatura)" [ngStyle]="{'--color-progreso': data.myColor}">
+    <svg [style.--dashoffset]="calculateDashOffset(data.temperatura || data.humedad)" [ngStyle]="{'--color-progreso': data.myColor}">
       <circle class="bg" cx="70" cy="100" r="40"/>
       <circle class="meter" cx="70" cy="100" r="40"/>
     </svg>

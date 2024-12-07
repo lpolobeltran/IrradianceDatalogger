@@ -2,7 +2,7 @@
 
   <div class="home__top">
     <app-card [data]="{titulo: 'Temperatura', stroke:'blue', temperatura:temperatura, svg:'thermometer', myColor: '#ff7782'}"></app-card>
-    <app-card [data]="{titulo: 'Humedad Ambiental', stroke:'blue', temperatura:temperatura, svg:'water_drop', myColor: '#41f1b6'}"></app-card>
+    <app-card [data]="{titulo: 'Humedad Ambiental', stroke:'blue', humedad:humedad, svg:'water_drop', myColor: '#41f1b6'}"></app-card>
     <app-card [data]="{titulo: 'Temperatura interna', stroke:'blue', temperatura:temperatura, svg:'thermometer', myColor: '#ff7782'}"></app-card>
     <app-card [data]="{titulo: 'Corriente panel', stroke:'blue', temperatura:temperatura, svg:'bolt', myColor: '#7380ec'}"></app-card>
   </div>
@@ -16,7 +16,7 @@
     <app-card [temperature]="temperature"></app-card>
   </div> -->
   <!-- <div *ngIf="data.length > 0; else noData">
-    <table> 
+    <table>
       <thead>
         <tr>
           <th *ngFor="let header of data[0]">{{ header }}</th>

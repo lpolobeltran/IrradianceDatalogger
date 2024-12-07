@@ -18,7 +18,7 @@
   </div>
 
   <div class="card__rigth">
-    <svg [style.--dashoffset]="calculateDashOffset(data.temperatura)">
+    <svg [style.--dashoffset]="calculateDashOffset(data.temperatura)" [ngStyle]="{'--color-progreso': data.myColor}">
       <circle class="bg" cx="70" cy="100" r="40"/>
       <circle class="meter" cx="70" cy="100" r="40"/>
     </svg>

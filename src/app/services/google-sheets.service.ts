@@ -18,7 +18,7 @@ export class GoogleSheetsService {
   }
 
   // Este método realiza solicitudes a la API cada cierto tiempo (por defecto cada 5000 ms).
-  getDataWithPolling(intervalMs: number = 500): Observable<any[]> {
+  getDataWithPolling(intervalMs: number = 50): Observable<any[]> {
     return interval(intervalMs) // Genera un flujo que emite valores cada `intervalMs` milisegundos.
       .pipe(
         switchMap(() => this.getData()) // Por cada emisión, llama al método `getData` para obtener datos actualizados.

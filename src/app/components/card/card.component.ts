@@ -11,13 +11,12 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   // @Input() temperature: number = 0; // Valor predeterminado en caso de no recibir entrada
-  @Input() data!: { titulo: string; stroke: string,  temperatura?: number, humedad?:number, svg:string }; // Escucha un objeto con múltiples valores
-
+  @Input() data!: { titulo: string; stroke: string,  temperatura?: number, humedad?:number, svg:string, myColor:string }; // Escucha un objeto con múltiples valores
+  hhs='black'
   /* En TypeScript, todas las propiedades deben ser inicializadas antes de usarse. Si declaras una propiedad sin inicializarla,
   TypeScript asume que podría ser undefined, lo cual puede causar errores en tiempo de compilación. Angular asignará el valor más
   adelante, pero TypeScript no lo sabe y da un error. Si estás seguro de que Angular u otro mecanismo inicializará la propiedad
   correctamente, puedes usar ! para evitar el error de compilación */
-
 
   //  función para calcular el desplazamiento de progreso en función de la temperatura:
   calculateDashOffset(temperatura: number | undefined): string {

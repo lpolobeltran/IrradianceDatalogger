@@ -11,7 +11,7 @@ import { CardComponent } from '../../components/card/card.component';
   templateUrl: './comparacion-irradiancia.component.html',
   styleUrl: './comparacion-irradiancia.component.scss'
 })
-export class ComparacionIrradianciaComponent implements OnInit {
+export class ComparacionIrradianciaComponent  {
 
   public temperatura: number = 0; // Último valor de la temperatura
 
@@ -20,15 +20,15 @@ export class ComparacionIrradianciaComponent implements OnInit {
     private googleSheetsService: GoogleSheetsService,  // Servicio de Google Sheets
   ) { }
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
 
-    this.googleSheetsService.getDataWithPolling(5000).subscribe({
-      next: (data) => {
-        const latestRow = data[data.length - 1]; // Asume que la última fila tiene el dato más reciente
-        this.temperatura = latestRow[1]; // Cambia [1] por el índice de la columna que contiene la temperatura
-      },
-      error: (err) => console.error('Error al obtener datos:', err),
-    });
+  //   this.googleSheetsService.getDataWithPolling(5000).subscribe({
+  //     next: (data) => {
+  //       const latestRow = data[data.length - 1]; // Asume que la última fila tiene el dato más reciente
+  //       this.temperatura = latestRow[1]; // Cambia [1] por el índice de la columna que contiene la temperatura
+  //     },
+  //     error: (err) => console.error('Error al obtener datos:', err),
+  //   });
 
-  }
+  // }
 }

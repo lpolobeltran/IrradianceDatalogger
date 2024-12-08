@@ -1,6 +1,7 @@
 <div class="card">
 
   <div class="card__left">
+
     <div class="item">
 
       <span class="material-symbols-outlined" [style.background-color]="data.myColor" [style.--color1]="data.myColor">
@@ -12,7 +13,7 @@
 
     <h3 class="item"> {{data.titulo}} </h3>
 
-    <h1 class="item"> {{data.temperatura || data.humedad}}°C </h1>
+    <h1 class="item"> {{data.temperatura || data.humedad}} °C </h1>
 
     <p class="item">Tiempo real</p>
   </div>
@@ -23,7 +24,7 @@
       <circle class="meter" cx="70" cy="100" r="40"/>
     </svg>
     <div class="card__rigth__number">
-      <p> {{data.temperatura}} °C</p>
+      <p> {{data.temperatura || data.humedad}} <br> W/m <sup>2</sup></p>
     </div>
   </div>
 

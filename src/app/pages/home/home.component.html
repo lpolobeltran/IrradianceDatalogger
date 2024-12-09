@@ -9,6 +9,7 @@
       titulo: 'Temperatura',
       stroke:'blue',
       temperatura:temperatura,
+      unidad: '°C',
       svg:'thermometer',
       myColor: '#ff7782'
       }">
@@ -16,9 +17,10 @@
 
     <!-- Humedad -->
     <app-card [data]="{
-      titulo: 'Humedad Ambiental',
+      titulo: 'Humedad ambiental',
       stroke:'blue',
       humedad:humedad,
+      unidad: '%',
       svg:'water_drop',
       myColor: '#41f1b6'
       }">
@@ -29,6 +31,7 @@
       titulo: 'Temperatura interna',
       stroke:'blue',
       temperaturaIn:temperaturaIn,
+      unidad: '°C',
       svg:'thermometer',
       myColor: '#ff7782'
       }">
@@ -39,6 +42,7 @@
       titulo: 'Corriente panel',
       stroke:'blue',
       corriente:corriente,
+      unidad: 'A',
       svg:'bolt',
       myColor: '#7380ec'
       }">
@@ -54,6 +58,7 @@
       titulo: 'Voltaje panel',
       stroke:'blue',
       voltaje:voltaje,
+      unidad: 'V',
       svg:'bolt',
       myColor: '#7380ec'
       }">
@@ -64,6 +69,7 @@
       titulo: 'Irradiancia patrón',
       stroke:'blue',
       irradiacionPatron:irradiacionPatron,
+      unidad: 'W/m²',
       svg:'light_mode',
       myColor: '#ffbb55'
       }">
@@ -74,6 +80,7 @@
       titulo: 'Irradiancia prototipo',
       stroke:'blue',
       irradiacionProto:irradiacionProto,
+      unidad: 'W/m²',
       svg:'light_mode',
       myColor: '#ffbb55'
       }">
@@ -84,6 +91,7 @@
       titulo: 'Irradiancia panel',
       stroke:'blue',
       irradiacionPanel:irradiacionPanel,
+      unidad: 'W/m²',
       svg:'light_mode',
       myColor: '#ffbb55'}">
     </app-card>

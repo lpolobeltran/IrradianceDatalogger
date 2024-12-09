@@ -21,6 +21,7 @@ export class CardComponent {
     irradiacionPatron?:number,
     irradiacionProto?:number,
     irradiacionPanel?:number,
+    unidad: string,
     svg:string,
     myColor:string
   }; // Escucha un objeto con múltiples valores
@@ -76,11 +77,20 @@ export class CardComponent {
     const validValue = value ?? 0;
     const maxValue = 1500; // Cambia este valor según el rango máximo esperado
     const percentage = Math.min((validValue / maxValue) * 100, 100); // Asegura que no exceda el 100%
-
+    console.log(percentage);
     const circumference = 2 * Math.PI * 40; // Fórmula: 2 * π * radio
     const dashOffset = circumference * (1 - percentage / 100);
     return `${dashOffset}px`;
 
+  }
+
+  // Funcion para calcular el porcentaje correspondiente del valor de cada sensor:
+  calcularPorcentaje(valorSensor: number | undefined, valorMaximo: number | undefined): number | undefined {
+    let porcentaje = 0;
+    // let titulo = this.data.titulo;
+    porcentaje = (valorSensor! / valorMaximo!) * 100;
+
+    return parseFloat(porcentaje.toFixed(2));
   }
 
 }

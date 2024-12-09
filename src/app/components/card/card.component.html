@@ -15,8 +15,8 @@
 
     <h3 class="item"> {{data.titulo}} </h3>
 
-    <h1 class="item"> {{data.temperatura || data.humedad || data.temperaturaIn || data.corriente || data.voltaje ||
-      data.irradiacionPatron || data.irradiacionProto || data.irradiacionPanel}} °C </h1>
+    <h1 class="item_principal"> {{data.temperatura || data.humedad || data.temperaturaIn || data.corriente || data.voltaje ||
+      data.irradiacionPatron || data.irradiacionProto || data.irradiacionPanel}} <span>{{data.unidad}}</span></h1>
 
     <p class="item">Tiempo real</p>
   </div>
@@ -45,8 +45,21 @@
     </svg>
 
     <div class="card__rigth__number">
-      <p> {{data.temperatura || data.humedad || data.temperaturaIn}}%</p>
+
+      <p> {{
+        data.temperatura !== null && data.temperatura !== undefined ? calcularPorcentaje(data.temperatura, 100) :
+        data.humedad !== null && data.humedad !== undefined ? calcularPorcentaje(data.humedad, 100) :
+        data.temperaturaIn !== null && data.temperaturaIn !== undefined ? calcularPorcentaje(data.temperaturaIn, 100) :
+        data.corriente !== null && data.corriente !== undefined ? calcularPorcentaje(data.corriente, 30) :
+        data.voltaje !== null && data.voltaje !== undefined ? calcularPorcentaje(data.voltaje, 25) :
+        data.irradiacionPatron !== null && data.irradiacionPatron !== undefined ? calcularPorcentaje(data.irradiacionPatron , 1500) :
+        data.irradiacionProto !== null && data.irradiacionProto !== undefined ? calcularPorcentaje(data.irradiacionProto , 1500) :
+        data.irradiacionPanel !== null && data.irradiacionPanel !== undefined ? calcularPorcentaje(data.irradiacionPanel , 1500) :
+        ''}} %
+      </p>
+
     </div>
+
   </div>
 
 </div>

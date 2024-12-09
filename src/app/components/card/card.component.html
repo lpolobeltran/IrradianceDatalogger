@@ -25,23 +25,9 @@
 
   <div class="card__rigth">
 
-    <svg
-
-      [style.--dashoffset]="
-      data.temperatura !== null && data.temperatura !== undefined ? calculateDashOffsetTemperatura(data.temperatura) :
-      data.humedad !== null && data.humedad !== undefined ? calculateDashOffsetTemperatura(data.humedad) :
-      data.temperaturaIn !== null && data.temperaturaIn !== undefined ? calculateDashOffsetTemperatura(data.temperaturaIn) :
-      data.corriente !== null && data.corriente !== undefined ? calculateDashOffsetCorriente(data.corriente) :
-      data.voltaje !== null && data.voltaje !== undefined ? calculateDashOffsetVoltaje(data.voltaje) :
-      data.irradiacionPatron !== null && data.irradiacionPatron !== undefined ? calculateDashOffsetPatron(data.irradiacionPatron) :
-      data.irradiacionProto !== null && data.irradiacionProto !== undefined ? calculateDashOffsetPatron(data.irradiacionProto) :
-      data.irradiacionPanel !== null && data.irradiacionPanel !== undefined ? calculateDashOffsetPatron(data.irradiacionPanel) :
-      ''"
-
-      [ngStyle]="{'--color-progreso': data.myColor}">
+    <svg [ngStyle]="{ '--dashoffset': dashOffset, '--color-progreso': data.myColor }">
       <circle class="bg" cx="70" cy="100" r="40" />
       <circle class="meter" cx="70" cy="100" r="40" />
-
     </svg>
 
     <div class="card__rigth__number">

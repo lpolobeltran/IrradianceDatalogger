@@ -127,13 +127,11 @@ svg circle.bg{
   stroke: styles.$color-white; // Fondo de progress
 }
 
-svg circle.meter{
-  stroke: var(--color-progreso); // Color del progress
-  stroke-dashoffset: var(--dashoffset); // Cambia este valor para el porcentaje que deseas (0-100)
-  stroke-dasharray: 251.2px;
-  animation: prog 4s linear forwards,
-              glow 2s 2s ease-in-out forwards;
-
+.meter {
+  stroke: var(--color-progreso, #000);
+  stroke-dasharray: calc(2 * 3.1416 * 40);
+  stroke-dashoffset: var(--dashoffset, 0);
+  transition: stroke-dashoffset 0.7s ease-out;
 }
 
 @keyframes prog{

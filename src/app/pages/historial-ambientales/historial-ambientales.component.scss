@@ -61,6 +61,7 @@ button:active, button:focus {
 }
 .l-grid__item {
   text-align: center;
+  background-color: white;
 }
 
 .c-button {
@@ -71,7 +72,7 @@ button:active, button:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 2.4rem;
+  border-radius: 1.5rem;
   border: 0;
   color: #879fbe;
   background: transparent;
@@ -81,6 +82,8 @@ button:active, button:focus {
 }
 .c-button:hover:before {
   background: rgba(255, 255, 255, 0.24);
+  // background: white;
+  
 }
 .c-button:before {
   content: "";

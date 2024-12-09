@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent {
+export class CardComponent implements OnChanges{
 
   @Input() data!: {
     titulo: string; stroke: string,
@@ -25,6 +25,30 @@ export class CardComponent {
     svg:string,
     myColor:string
   }; // Escucha un objeto con múltiples valores
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['data']) {
+      const value = this.data.temperatura || this.data.humedad || this.data.temperaturaIn || this.data.corriente || this.data.voltaje || this.data.irradiacionPatron || this.data.irradiacionProto || this.data.irradiacionPanel || 0;
+      const maxValue = this.data.temperatura !== undefined || this.data.humedad !== undefined || this.data.temperaturaIn !== undefined
+        ? 100
+        : this.data.corriente !== undefined
+        ? 30
+        : this.data.voltaje !== undefined
+        ? 25
+        : 1500;
+
+      this.updateDashOffset(value, maxValue);
+    }
+  }
+
+  dashOffset: string = '';
+
+  private updateDashOffset(value: number, maxValue: number): void {
+    const percentage = Math.min((value / maxValue) * 100, 100);
+    const circumference = 2 * Math.PI * 40;
+    this.dashOffset = `${circumference * (1 - percentage / 100)}px`;
+  }
 
   /* En TypeScript, todas las propiedades deben ser inicializadas antes de usarse. Si declaras una propiedad sin inicializarla,
   TypeScript asume que podría ser undefined, lo cual puede causar errores en tiempo de compilación. Angular asignará el valor más

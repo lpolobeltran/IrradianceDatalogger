@@ -13,8 +13,9 @@ import { CardComponent } from '../../components/card/card.component';
 })
 export class ComparacionIrradianciaComponent  {
 
-  public temperatura: number = 0; // Último valor de la temperatura
-  public humedad: number = 0; // Último valor de la temperatura
+  public irradiacionPatron: number = 0; // Último valor de la temperatura
+  public irradiacionProto: number = 0; // Último valor de la temperatura
+  public irradiacionPanel: number = 0; // Último valor de la temperatura
 
   // Inyeccion del servicio "GoogleSheetsService"
   constructor(private googleSheetsService: GoogleSheetsService) { } // Servicio de Google Sheets
@@ -26,8 +27,9 @@ export class ComparacionIrradianciaComponent  {
       next: (data) => {
         if (data && data.length) {
           const latestRow = data[data.length-1]; // Ubicarse en la última fila de los datos que se reciben en el array data
-          this.temperatura = latestRow[1]; // Ubicarse en la columna 2
-          this.humedad = latestRow[2]; // Ubicarse en la columna 2
+          this.irradiacionPatron = latestRow[6]; // Asumiendo que la temperatura está en la columna 1
+          this.irradiacionProto = latestRow[7]; // Asumiendo que la temperatura está en la columna 1
+          this.irradiacionPanel = latestRow[8]; // Asumiendo que la temperatura está en la columna 1
         }
       },
       error: (err) => console.error('Error al obtener datos:', err),

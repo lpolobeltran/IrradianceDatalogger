@@ -84,6 +84,7 @@
   color: styles.$color-dark;
   font-weight: 600;
   font-size: 1.3rem;
+  padding-left: 0;
 }
 
 .card__left div span {
@@ -103,6 +104,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
 .card__rigth svg{

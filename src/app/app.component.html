@@ -5,14 +5,10 @@
 
   <div class="panel">
 
-    <!--------------------------------------------------------------------------------------------------------------------------->
-
     <!-- SECCION DE TITULO PRINCIPAL -->
     <div class="titulo">
       <h1>Panel de parámetros</h1>
     </div>
-
-    <!--------------------------------------------------------------------------------------------------------------------------->
 
     <!-- SECCION DE FILTROS PARA VISUALIZACION -->
     <div class="filtros">
@@ -70,14 +66,16 @@
 
     </div>
 
-    <!--------------------------------------------------------------------------------------------------------------------------->
-
     <!-- SECCION AL SELECCIONAR FILTRO -->
+
     <!-- <app-home></app-home> -->
     <app-home *ngIf="activeComponent === 'home'"></app-home>
+
     <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
+
+    <app-historial-ambientales *ngIf="activeComponent === 'historialAmbientales'"></app-historial-ambientales>
     <!-- Agrega otros componentes según sea necesario -->
-    <!--------------------------------------------------------------------------------------------------------------------------->
+
 
   </div>
 

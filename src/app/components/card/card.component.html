@@ -1,5 +1,7 @@
 <div class="card">
 
+  <!-- SEGMENTO IZQUIERDO DE CARD -->
+
   <div class="card__left">
 
     <div class="item">
@@ -13,18 +15,37 @@
 
     <h3 class="item"> {{data.titulo}} </h3>
 
-    <h1 class="item"> {{data.temperatura || data.humedad}} °C </h1>
+    <h1 class="item"> {{data.temperatura || data.humedad || data.temperaturaIn || data.corriente || data.voltaje ||
+      data.irradiacionPatron || data.irradiacionProto || data.irradiacionPanel}} °C </h1>
 
     <p class="item">Tiempo real</p>
   </div>
 
+  <!-- SEGMENTO DERECHO DE CARD -->
+
   <div class="card__rigth">
-    <svg [style.--dashoffset]="calculateDashOffset(data.temperatura || data.humedad)" [ngStyle]="{'--color-progreso': data.myColor}">
-      <circle class="bg" cx="70" cy="100" r="40"/>
-      <circle class="meter" cx="70" cy="100" r="40"/>
+
+    <svg
+
+      [style.--dashoffset]="
+      data.temperatura !== null && data.temperatura !== undefined ? calculateDashOffsetTemperatura(data.temperatura) :
+      data.humedad !== null && data.humedad !== undefined ? calculateDashOffsetTemperatura(data.humedad) :
+      data.temperaturaIn !== null && data.temperaturaIn !== undefined ? calculateDashOffsetTemperatura(data.temperaturaIn) :
+      data.corriente !== null && data.corriente !== undefined ? calculateDashOffsetCorriente(data.corriente) :
+      data.voltaje !== null && data.voltaje !== undefined ? calculateDashOffsetVoltaje(data.voltaje) :
+      data.irradiacionPatron !== null && data.irradiacionPatron !== undefined ? calculateDashOffsetPatron(data.irradiacionPatron) :
+      data.irradiacionProto !== null && data.irradiacionProto !== undefined ? calculateDashOffsetPatron(data.irradiacionProto) :
+      data.irradiacionPanel !== null && data.irradiacionPanel !== undefined ? calculateDashOffsetPatron(data.irradiacionPanel) :
+      ''"
+
+      [ngStyle]="{'--color-progreso': data.myColor}">
+      <circle class="bg" cx="70" cy="100" r="40" />
+      <circle class="meter" cx="70" cy="100" r="40" />
+
     </svg>
+
     <div class="card__rigth__number">
-      <p> {{data.temperatura || data.humedad}} <br> W/m <sup>2</sup></p>
+      <p> {{data.temperatura || data.humedad || data.temperaturaIn}}%</p>
     </div>
   </div>
 

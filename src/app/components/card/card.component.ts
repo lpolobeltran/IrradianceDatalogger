@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, AfterViewInit  } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent implements OnChanges{
+export class CardComponent implements OnChanges {
 
   @Input() data!: {
     titulo: string; stroke: string,
@@ -27,27 +27,63 @@ export class CardComponent implements OnChanges{
   }; // Escucha un objeto con múltiples valores
 
 
+
+
+  dataKey: string = '';
+  dashOffset: string = '0'; // Inicializamos en 0 para la animación
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['data']) {
-      const value = this.data.temperatura || this.data.humedad || this.data.temperaturaIn || this.data.corriente || this.data.voltaje || this.data.irradiacionPatron || this.data.irradiacionProto || this.data.irradiacionPanel || 0;
-      const maxValue = this.data.temperatura !== undefined || this.data.humedad !== undefined || this.data.temperaturaIn !== undefined
-        ? 100
-        : this.data.corriente !== undefined
-        ? 30
-        : this.data.voltaje !== undefined
-        ? 25
-        : 1500;
-
-      this.updateDashOffset(value, maxValue);
+      this.dataKey = `key-${Date.now()}`; // Aseguramos una clave única para reiniciar la animación
+      this.updateDashOffset();
     }
   }
 
-  dashOffset: string = '';
 
-  private updateDashOffset(value: number, maxValue: number): void {
+  // Función para calcular el desplazamiento de la barra de progreso
+  updateDashOffset() {
+    let value = 0;
+
+    if (this.data.temperatura !== undefined) {
+      value = this.data.temperatura;
+    } else if (this.data.humedad !== undefined) {
+      value = this.data.humedad;
+    } else if (this.data.temperaturaIn !== undefined) {
+      value = this.data.temperaturaIn;
+    } else if (this.data.corriente !== undefined) {
+      value = this.data.corriente;
+    } else if (this.data.voltaje !== undefined) {
+      value = this.data.voltaje;
+    } else if (this.data.irradiacionPatron !== undefined) {
+      value = this.data.irradiacionPatron;
+    } else if (this.data.irradiacionProto !== undefined) {
+      value = this.data.irradiacionProto;
+    } else if (this.data.irradiacionPanel !== undefined) {
+      value = this.data.irradiacionPanel;
+    }
+
+    // Calcula el porcentaje basado en el valor máximo
+    const maxValue = this.getMaxValue();
     const percentage = Math.min((value / maxValue) * 100, 100);
-    const circumference = 2 * Math.PI * 40;
+
+    // Calcula el offset basado en el porcentaje
+    const circumference = 2 * Math.PI * 40; // Circunferencia del círculo (radio=40)
     this.dashOffset = `${circumference * (1 - percentage / 100)}px`;
+
+    console.log(this.dashOffset);
+
+  }
+
+  getMaxValue(): number {
+    if (this.data.temperatura !== undefined) return 100;
+    if (this.data.humedad !== undefined) return 100;
+    if (this.data.temperaturaIn !== undefined) return 100;
+    if (this.data.corriente !== undefined) return 30;
+    if (this.data.voltaje !== undefined) return 25;
+    if (this.data.irradiacionPatron !== undefined) return 1500;
+    if (this.data.irradiacionProto !== undefined) return 1500;
+    if (this.data.irradiacionPanel !== undefined) return 1500;
+    return 100; // Valor por defecto
   }
 
   /* En TypeScript, todas las propiedades deben ser inicializadas antes de usarse. Si declaras una propiedad sin inicializarla,
@@ -115,6 +151,16 @@ export class CardComponent implements OnChanges{
     porcentaje = (valorSensor! / valorMaximo!) * 100;
 
     return parseFloat(porcentaje.toFixed(2));
+  }
+
+  ngAfterViewInit(): void {
+    const circumference = 2 * Math.PI * 40; // Circunferencia del círculo (radio=40)
+    this.dashOffset = `${circumference}px`; // Empieza en el máximo valor (100%)
+
+    // Luego, actualiza al valor real con un pequeño retardo para permitir la animación
+    setTimeout(() => {
+      this.updateDashOffset();
+    }, 300);
   }
 
 }

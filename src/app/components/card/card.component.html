@@ -26,8 +26,10 @@
   <div class="card__rigth">
 
     <svg [ngStyle]="{ '--dashoffset': dashOffset, '--color-progreso': data.myColor }">
+
       <circle class="bg" cx="70" cy="100" r="40" />
-      <circle class="meter" cx="70" cy="100" r="40" />
+      <circle class="meter" cx="70" cy="100" r="40" style="stroke-dasharray: 251.2; stroke-dashoffset: var(--dashoffset, 0);"/>
+
     </svg>
 
     <div class="card__rigth__number">

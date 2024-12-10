@@ -127,11 +127,17 @@ svg circle.bg{
   stroke: styles.$color-white; // Fondo de progress
 }
 
-.meter {
-  stroke: var(--color-progreso, #000);
-  stroke-dasharray: calc(2 * 3.1416 * 40);
-  stroke-dashoffset: var(--dashoffset, 0);
-  transition: stroke-dashoffset 0.7s ease-out;
+circle.meter {
+  fill: none;
+  stroke: var(--color-progreso, #3498db); /* Color dinámico */
+  stroke-width: 10;
+  stroke-linecap: round;
+
+  /* Transición para animaciones suaves */
+  transition: stroke-dashoffset 0.5s ease-out, filter 0.5s ease-out;
+
+  /* Agrega el efecto de iluminación */
+  filter: drop-shadow(0 0 5px var(--color-progreso, #3498db));
 }
 
 @keyframes prog{

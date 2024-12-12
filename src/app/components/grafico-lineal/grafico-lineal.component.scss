@@ -1,0 +1,19 @@
+// ESTILO DE GRAFICOS DE ANALISIS
+
+@use "../../../../public/styles.scss";
+
+// ----------------------------
+
+canvas{
+  background-color: blue;
+  background-color: white;
+  max-width: 280px;
+  max-height: 200px;
+  border-radius: styles.$card-border-radius;
+  // padding-top: styles.$card-padding;
+  // padding-left: styles.$card-padding;
+  // padding-right: styles.$card-padding;
+  padding: 0;
+  padding-bottom: 0;
+  font-size: styles.$main-font;
+}

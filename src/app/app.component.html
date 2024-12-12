@@ -57,7 +57,7 @@
         </button>
       </div>
       <div>
-        <button (click)="showComponent('intervaloMuestreo')">
+        <button (click)="showComponent('intervalos')">
           <p>
             Intervalo de muestreo
           </p>
@@ -68,14 +68,17 @@
 
     <!-- SECCION AL SELECCIONAR FILTRO -->
 
-    <!-- <app-home></app-home> -->
     <app-home *ngIf="activeComponent === 'home'"></app-home>
 
     <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
 
     <app-historial-ambientales *ngIf="activeComponent === 'historialAmbientales'"></app-historial-ambientales>
-    <!-- Agrega otros componentes según sea necesario -->
 
+    <app-electrico *ngIf="activeComponent === 'electricos'"></app-electrico>
+
+    <app-ambientales *ngIf="activeComponent === 'ambientales'"></app-ambientales>
+
+    <app-intervalos *ngIf="activeComponent === 'intervalos'"></app-intervalos>
 
   </div>
 

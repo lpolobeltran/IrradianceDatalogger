@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { GoogleSheetsService } from '../../services/google-sheets.service';
-import { Component, OnDestroy, OnInit } from '@angular/core'; // Se importa OnInit para poder usarlo
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
 
 @Component({
@@ -12,6 +12,7 @@ import { CardComponent } from "../../components/card/card.component";
 })
 
 export class HomeComponent implements OnInit {
+
   public temperatura: number = 0; // Último valor de la temperatura
   public humedad: number = 0; // Último valor de la temperatura
   public temperaturaIn: number = 0; // Último valor de la temperatura
@@ -32,7 +33,6 @@ export class HomeComponent implements OnInit {
 
         if (data && data.length) {
           const latestRow = data[data.length - 1];
-          // console.log('Última fila de datos:', latestRow);
           this.temperatura = latestRow[1]; // Asumiendo que la temperatura está en la columna 1
           this.humedad = latestRow[2]; // Asumiendo que la temperatura está en la columna 1
           this.temperaturaIn = latestRow[3]; // Asumiendo que la temperatura está en la columna 1

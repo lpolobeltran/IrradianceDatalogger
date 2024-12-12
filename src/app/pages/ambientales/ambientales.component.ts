@@ -2,16 +2,15 @@ import { CommonModule } from '@angular/common';
 import { GoogleSheetsService } from '../../services/google-sheets.service';
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
-import { GraficoLinealComponent } from '../../components/grafico-lineal/grafico-lineal.component';
 
 @Component({
-  selector: 'app-historial-ambientales',
+  selector: 'app-ambientales',
   standalone: true,
-  imports: [CardComponent, GraficoLinealComponent],
-  templateUrl: './historial-ambientales.component.html',
-  styleUrl: './historial-ambientales.component.scss'
+  imports: [CardComponent, CommonModule],
+  templateUrl: './ambientales.component.html',
+  styleUrl: './ambientales.component.scss'
 })
-export class HistorialAmbientalesComponent implements OnInit {
+export class AmbientalesComponent implements OnInit{
 
   public temperatura: number = 0; // Último valor de la temperatura
   public humedad: number = 0; // Último valor de la temperatura

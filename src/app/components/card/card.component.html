@@ -16,7 +16,7 @@
     <h3 class="item"> {{data.titulo}} </h3>
 
     <h1 class="item_principal"> {{data.temperatura || data.humedad || data.temperaturaIn || data.corriente || data.voltaje ||
-      data.irradiacionPatron || data.irradiacionProto || data.irradiacionPanel}} <span>{{data.unidad}}</span></h1>
+      data.irradiacionPatron || data.irradiacionProto || data.irradiacionPanel || data.potencia}} <span>{{data.unidad}}</span></h1>
 
     <p class="item">Tiempo real</p>
   </div>
@@ -50,6 +50,7 @@
         data.irradiacionPatron !== null && data.irradiacionPatron !== undefined ? calcularPorcentaje(data.irradiacionPatron , 1500) :
         data.irradiacionProto !== null && data.irradiacionProto !== undefined ? calcularPorcentaje(data.irradiacionProto , 1500) :
         data.irradiacionPanel !== null && data.irradiacionPanel !== undefined ? calcularPorcentaje(data.irradiacionPanel , 1500) :
+        data.potencia !== null && data.potencia !== undefined ? calcularPorcentaje(data.potencia , 750) :
         ''}} %
       </p>
 

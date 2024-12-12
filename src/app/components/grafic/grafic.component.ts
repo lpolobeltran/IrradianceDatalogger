@@ -22,6 +22,7 @@ Chart.register(
   styleUrl: './grafic.component.scss'
 })
 export class GraficComponent implements AfterViewInit {
+  
   ngAfterViewInit() {
     // Obtén el contexto del canvas
     const ctx = (document.getElementById('grafic') as HTMLCanvasElement).getContext('2d');
@@ -75,8 +76,25 @@ export class GraficComponent implements AfterViewInit {
       802.994, 826.933, 841.296, 841.296, 842.892, 855.659, 868.427, 876.406]
     datosProt.reverse();
 
+    let datosPanel = [429.65, 414.34, 419.94, 420.77, 429.33, 391.86, 390.15, 423.88,
+      421.73, 411.02, 403.99, 360.80, 378.87, 369.42, 336.94, 311.58,
+      310.35, 321.69, 265.94, 288.85, 232.81, 227.95, 277.72, 276.09,
+      251.68, 268.51, 238.27, 238.37, 267.89, 257.85, 221.33, 232.85,
+      229.97, 217.89, 192.06, 187.51, 200.69, 181.41, 213.64, 195.94,
+      227.12, 240.98, 237.79, 222.81, 206.74, 244.94, 250.35, 229.19,
+      200.85, 233.76, 263.91, 276.69, 248.79, 267.59, 288.87, 279.92,
+      350.73, 326.18, 347.73, 354.93, 416.76, 414.32, 416.67, 452.56,
+      462.94, 466.27, 466.23, 509.56, 524.31, 547.01, 544.04, 545.91,
+      577.67, 570.72, 551.64, 532.32, 529.14, 542.47, 533.26, 508.77,
+      526.43, 552.71, 556.12, 610.71, 630.49, 604.37, 633.47, 613.42,
+      673.61, 683.99, 728.17, 737.12, 709.09, 745.88, 725.22, 750.65
+
+      ]
+    datosPanel.reverse();
+
     // Verifica que el contexto exista antes de continuar
     if (ctx) {
+
       new Chart(ctx, {
         type: 'line',  // Establece el tipo de gráfico como 'line' (gráfico de líneas)
         data: {
@@ -85,31 +103,63 @@ export class GraficComponent implements AfterViewInit {
             {
               label: 'Irradiancia Patrón',
               data: datosRika,  // Datos de la primera serie
-              borderColor: 'red',      // Color de la línea
-              backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la línea (transparente)
+              borderColor: 'rgba(255, 0, 0, 1)', // Rojo sólido
+              backgroundColor: 'rgba(255, 0, 0, 0.2)', // Rojo con transparencia
               fill: true,              // Rellenar el área bajo la línea
+              tension: 0.5,
             },
             {
               label: 'Irradiancia Prototipo',
               data: datosProt,  // Datos de la segunda serie
-              borderColor: 'blue',     // Color de la línea
-              backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la línea (transparente)
+              borderColor: 'rgba(0, 0, 255, 1)', // Azul sólido
+              backgroundColor: 'rgba(0, 0, 255, 0.2)', // Azul con transparencia
               fill: true,              // Rellenar el área bajo la línea
+              tension: 0.5,
+
+            },
+            {
+              label: 'Irradiancia Panel',
+              data: datosPanel,  // Datos de la segunda serie
+              borderColor: 'rgba(128, 0, 128, 1)', // Azul sólido
+              backgroundColor: 'rgba(128, 0, 128, 0.2)', // Azul con transparencia
+              fill: true,              // Rellenar el área bajo la línea
+              tension: 0.5,
+
             },
           ],
         },
         options: {
-          responsive: true,  // Hacer el gráfico responsive
+          animation: {
+            duration: 0  // Desactiva la animación completamente
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
           scales: {
             x: {
-              type: 'category', // Definir que el eje X sea de tipo 'categoría'
+              type: 'category',
             },
             y: {
-              beginAtZero: true, // Asegurar que el eje Y comience en 0
-              type: 'linear',    // Definir que el eje Y sea de tipo 'lineal'
+              beginAtZero: true,
+            },
+          },
+          elements: {
+            line: {
+              borderWidth: 2, // Grosor de la línea
+              fill: true,
+            },
+            point: {
+              radius: 0, // Tamaño de los puntos
             },
           },
         },
+
       });
     }
   }

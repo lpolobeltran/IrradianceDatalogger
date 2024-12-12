@@ -1,1 +1,52 @@
-<p>electrico works!</p>
+<div class="electrico">
+
+    <!-- SEGMENTO SUPERIOR DE LA PAGINA HOME -->
+
+    <div class="electrico__top">
+
+      <!-- Voltaje -->
+      <app-card [data]="{
+        titulo: 'Voltaje panel',
+        stroke:'blue',
+        voltaje:voltaje,
+        unidad: 'V',
+        svg:'bolt',
+        myColor: '#7380ec'
+        }">
+      </app-card>
+
+      <!-- Corriente -->
+      <app-card [data]="{
+        titulo: 'Corriente panel',
+        stroke:'blue',
+        corriente:corriente,
+        unidad: 'A',
+        svg:'bolt',
+        myColor: '#7380ec'
+        }">
+      </app-card>
+
+      <!-- Potencia -->
+      <app-card [data]="{
+        titulo: 'Potencia',
+        stroke:'blue',
+        potencia:potencia,
+        unidad: '°C',
+        svg:'thermometer',
+        myColor: '#ff7782'
+        }">
+      </app-card>
+
+      <!-- Irradiancia panel -->
+      <app-card [data]="{
+        titulo: 'Irradiancia panel',
+        stroke:'blue',
+        irradiacionPanel:irradianciaPanel,
+        unidad: 'W/m²',
+        svg:'light_mode',
+        myColor: '#ffbb55'}">
+      </app-card>
+
+    </div>
+
+</div>

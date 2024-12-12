@@ -18,6 +18,7 @@ export class CardComponent implements OnChanges {
     temperaturaIn?:number,
     corriente?:number,
     voltaje?:number,
+    potencia?:number,
     irradiacionPatron?:number,
     irradiacionProto?:number,
     irradiacionPanel?:number,
@@ -25,9 +26,6 @@ export class CardComponent implements OnChanges {
     svg:string,
     myColor:string
   }; // Escucha un objeto con múltiples valores
-
-
-
 
   dataKey: string = '';
   dashOffset: string = '0'; // Inicializamos en 0 para la animación
@@ -160,7 +158,7 @@ export class CardComponent implements OnChanges {
     // Luego, actualiza al valor real con un pequeño retardo para permitir la animación
     setTimeout(() => {
       this.updateDashOffset();
-    }, 300);
+    }, 400);
   }
 
 }

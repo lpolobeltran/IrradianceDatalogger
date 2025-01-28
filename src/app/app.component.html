@@ -7,11 +7,11 @@
 
     <!-- SECCION DE TITULO PRINCIPAL -->
     <div class="titulo">
-      <h1>Panel de parámetros</h1>
+      <h1>Dashboard</h1>
     </div>
 
     <!-- SECCION DE FILTROS PARA VISUALIZACION -->
-    <div class="filtros">
+    <!-- <div class="filtros">
 
       <div>
         <button (click)="showComponent('home')">
@@ -20,31 +20,9 @@
       </div>
 
       <div>
-        <button (click)="showComponent('ambientales')">
-          <p>Parámetros ambientales</p>
-        </button>
-      </div>
-
-      <div>
-        <button (click)="showComponent('electricos')">
+        <button (click)="showComponent('intervalos')">
           <p>
-            Parámetros eléctricos
-          </p>
-        </button>
-      </div>
-
-      <div>
-        <button (click)="showComponent('historialAmbientales')">
-          <p>
-            Historial de parámetros ambientales
-          </p>
-        </button>
-      </div>
-
-      <div>
-        <button (click)="showComponent('historialElectricos')">
-          <p>
-            Historial de parámetros eléctricos
+            Intervalo de muestreo
           </p>
         </button>
       </div>
@@ -56,27 +34,15 @@
           </p>
         </button>
       </div>
-      <div>
-        <button (click)="showComponent('intervalos')">
-          <p>
-            Intervalo de muestreo
-          </p>
-        </button>
-      </div>
 
-    </div>
+
+    </div> -->
 
     <!-- SECCION AL SELECCIONAR FILTRO -->
 
     <app-home *ngIf="activeComponent === 'home'"></app-home>
 
     <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
-
-    <app-historial-ambientales *ngIf="activeComponent === 'historialAmbientales'"></app-historial-ambientales>
-
-    <app-electrico *ngIf="activeComponent === 'electricos'"></app-electrico>
-
-    <app-ambientales *ngIf="activeComponent === 'ambientales'"></app-ambientales>
 
     <app-intervalos *ngIf="activeComponent === 'intervalos'"></app-intervalos>
 

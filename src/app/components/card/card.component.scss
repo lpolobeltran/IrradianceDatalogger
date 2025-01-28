@@ -16,8 +16,8 @@
 .card{
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 280px;
-  height: 200px;
+  width: 100%;
+  height: 175px;
   background-color: styles.$color-white;
   border-radius: styles.$card-border-radius;
   box-shadow: styles.$box-shadow;
@@ -64,6 +64,7 @@
 .card__left h1  {
   font-size: 2rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .card__left p  {

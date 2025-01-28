@@ -8,6 +8,7 @@ import { HistorialAmbientalesComponent } from './pages/historial-ambientales/his
 import { ElectricoComponent } from './pages/electrico/electrico.component';
 import { AmbientalesComponent } from './pages/ambientales/ambientales.component';
 import { IntervalosComponent } from './pages/intervalos/intervalos.component';
+import { GraficComponent } from './components/grafic/grafic.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,8 @@ import { IntervalosComponent } from './pages/intervalos/intervalos.component';
     HistorialAmbientalesComponent,
     ElectricoComponent,
     AmbientalesComponent,
+    IntervalosComponent,
+    GraficComponent,
     IntervalosComponent,
   ],
   templateUrl: './app.component.html',

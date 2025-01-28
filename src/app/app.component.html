@@ -42,9 +42,19 @@
 
     <app-home *ngIf="activeComponent === 'home'"></app-home>
 
-    <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
+    <!-- <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
 
-    <app-intervalos *ngIf="activeComponent === 'intervalos'"></app-intervalos>
+    <app-intervalos *ngIf="activeComponent === 'intervalos'"></app-intervalos> -->
+
+    <!-- SECCION DE INTERVALOS Y GRAFICO -->
+     <div class="panel-bottom">
+
+        <div>
+          
+        </div>
+        <app-grafic></app-grafic>
+
+     </div>
 
   </div>
 

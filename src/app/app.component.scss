@@ -2,13 +2,13 @@
 
 .panel{
   display: grid;
-  width: 96%;
+  width: 98%;
   height: 100%;
   margin: 0;
   border: 0;
   padding: 0;
   gap: 0.5rem;
-  grid-template-rows: 10vh auto;
+  grid-template-rows: 10vh auto 25vh;
 }
 
 
@@ -18,6 +18,42 @@ main{
   width: 100%;
   height: 100%;
 }
+
+h1 {
+  color: white;
+  margin-left: 9px;
+}
+
+.panel-bottom {
+  display: grid;
+  justify-items: end;
+  grid-template-columns: 784px auto;
+  // justify-content: end;
+  // justify-items: center;
+  // display: flex;
+  // justify-content: end;
+  :nth-child(2){
+    // justify-items: center;
+    visibility: visible;
+    justify-content: end;
+    position: relative;
+    top: -192px;
+  }
+}
+
+app-grafic{
+  // width: 521px;
+  width: 530px;
+}
+
+// .panel-bottom-left{
+//   width: 784px;
+//   background-color: green;
+// }
+
+// .panel-bottom-right{
+//   width: auto;
+// }
 
 .filtros{
   display: flex;

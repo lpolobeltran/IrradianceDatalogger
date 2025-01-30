@@ -1,70 +1,50 @@
 @use "../../../../public/styles.scss";
 
-*{
+* {
   margin: 0;
   padding: 0;
-  outline: 0; // elimina el contorno (o borde) que aparece alrededor de un elemento cuando está enfocado
-  appearance: none; // le estás diciendo al navegador que no utilice los estilos predeterminados para ese elemento Se usa comúnmente en elementos como input, select, button, etc.
+  outline: 0;
+  appearance: none;
   border: 0;
-  text-decoration: none; //  se usa para eliminar cualquier estilo de decoración de texto predeterminado, como subrayado, tachado o sobrelineado
-  list-style: none; // Se utiliza para eliminar los puntos o los números que se muestran por defecto al usar <ul> o <ol>
+  text-decoration: none;
+  list-style: none;
   box-sizing: border-box;
-  // background: #E7EEF7;
-
   font-family: styles.$main-font;
   font-weight: 200;
 }
 
-.intervalos{
+.intervalos {
   display: grid;
   grid-template-rows: 65px auto;
-  // grid-template-columns: auto auto auto auto;
-  // grid-template-rows: 0.3fr 0.5fr;
-  // gap: 50px;
-  // // justify-content: space-evenly;
-  // justify-content: center;
-  // align-items: center;
-  // flex-direction: column;
-  // justify-items: center;
   width: 95%;
   height: 100%;
-
-
 }
 
-.intervalos__top{
+.intervalos__top {
   font-size: 1.1rem;
-  // text-align: center;
   width: 100%;
   font-weight: 500;
   color: white;
   display: grid;
   grid-template-columns: auto auto;
-align-items: center;
+  align-items: center;
 }
 
-.intervalos__top h3{
+.intervalos__top h3 {
   font-size: 1.1rem;
-  // text-align: center;
   width: 100%;
   font-weight: 500;
   color: white;
 }
 
-.intervalos__buttom{
+.intervalos__buttom {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(6, auto);
   gap: 0px;
   justify-items: center;
   align-items: first baseline;
-  // width: 700px;
 }
-
-
-// *, *:before, *:after {
-//   box-sizing: inherit;
-// }
 
 body {
   font-size: 1.3rem;
@@ -74,27 +54,25 @@ body {
 }
 
 button {
-  --glow-color: rgb(217, 176, 255);
+  --glow-color: white;
   --glow-spread-color: rgba(191, 123, 255, 0.781);
   --enhanced-glow-color: rgb(231, 206, 255);
   --btn-color: rgb(100, 61, 136);
-  border: .25em solid var(--glow-color);
-  padding: 5px 12px ;
+
+  border: 0.25em solid var(--glow-color);
+  padding: 5px 12px;
   color: var(--glow-color);
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
   background-color: transparent;
   border-radius: 0.7em;
   outline: none;
   width: auto;
-  // box-shadow: 0 0 1em .25em var(--glow-color),
-  //        0 0 4em 1em var(--glow-spread-color),
-  //        inset 0 0 .75em .25em var(--glow-color);
-  // text-shadow: 0 0 .5em var(--glow-color);
   position: relative;
   transition: all 0.3s;
- }
- button::after {
+}
+
+button::after {
   pointer-events: none;
   content: "";
   position: absolute;
@@ -102,20 +80,18 @@ button {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--glow-spread-color);
   filter: blur(2em);
-  opacity: .7;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
- }
- button:hover {
-  color: var(--btn-color);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+/* Efecto cuando el botón está activo o al hacer hover */
+button:hover,
+button.active {
+  color: #303131;
   background-color: var(--glow-color);
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 2em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
- }
- button:active {
-  box-shadow: 0 0 0.6em .25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 .5em .25em var(--glow-color);
- }
+  box-shadow:
+    0 0 0.8em 0.2em var(--glow-color),
+    0 0 0 0.2em var(--glow-color),
+    inset 0 0 0.1em 0.1em var(--glow-color);
+}

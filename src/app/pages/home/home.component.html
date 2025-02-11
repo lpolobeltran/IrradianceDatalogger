@@ -1,10 +1,14 @@
 <div  class="home">
 
+
+
+
   <!-- SEGMENTO SUPERIOR LA PAGINA HOME -->
 
   <div class="home__top">
 
     <!-- SEGMENTO SUPERIOR IZQUIERDO DE LA PAGINA HOME -->
+
 
     <div class="home__top__left">
 
@@ -74,43 +78,6 @@
 
   </div>
 
-  <!-- SEGMENTO INFERIOR DE LA PAGINA HOME -->
-
-  <div class="home__bottom">
-
-    <!-- Irradiancia patrón -->
-    <app-card [data]="{
-      titulo: 'Irradiancia patrón',
-      stroke:'blue',
-      irradiacionPatron:irradiacionPatron,
-      unidad: 'W/m²',
-      svg:'light_mode',
-      myColor: '#ffbb55'
-      }">
-    </app-card>
-
-    <!-- Irradiancia prototipo -->
-    <app-card [data]="{
-      titulo: 'Irradiancia prototipo',
-      stroke:'blue',
-      irradiacionProto:irradiacionProto,
-      unidad: 'W/m²',
-      svg:'light_mode',
-      myColor: '#ffbb55'
-      }">
-    </app-card>
-
-    <!-- Irradiancia panel -->
-    <app-card [data]="{
-      titulo: 'Irradiancia panel',
-      stroke:'blue',
-      irradiacionPanel:irradiacionPanel,
-      unidad: 'W/m²',
-      svg:'light_mode',
-      myColor: '#ffbb55'}">
-    </app-card>
-
-  </div>
 
   <!-- <div class="home__bottom">
     <app-card [temperature]="temperature"></app-card>

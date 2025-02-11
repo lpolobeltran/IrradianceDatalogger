@@ -26,7 +26,6 @@
   font-weight: 500;
   color: white;
   display: grid;
-  grid-template-columns: auto auto;
   align-items: center;
 }
 
@@ -40,8 +39,6 @@
 .intervalos__buttom {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(6, auto);
-  gap: 0px;
   justify-items: center;
   align-items: first baseline;
 }

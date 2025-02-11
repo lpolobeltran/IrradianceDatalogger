@@ -1,3 +1,5 @@
+@use "../../../../public/styles.scss";
+
 *{
   margin: 0;
   padding: 0;
@@ -20,6 +22,7 @@
 
 .home__top{
   display: grid;
+  // position: absolute;
   // justify-content:space-between;
   // gap: 28px;
    /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
@@ -27,6 +30,8 @@
   // flex-direction: column;
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
   grid-template-columns: auto auto;
+  // visibility: hidden;
+
 }
 
 .home__top__left{
@@ -36,8 +41,28 @@
 }
 .home__top__right{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   gap: 5px;
+  :nth-child(1){
+    position: relative;
+    // top: -200px;
+    top: 147px;
+    // left: 10px;
+    // right: -200;
+    border-radius: styles.$card-border-radius;
+    height: 135px;
+  }
+  :nth-child(2){
+    position: relative;
+    // top: -200px;
+    // top: -383px;
+    top: 147px;
+
+    // left: 10px;
+    // right: -200;
+    border-radius: styles.$card-border-radius;
+    height: 135px;
+  }
 }
 
 
@@ -48,6 +73,7 @@
   margin-left: 9px;
   justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
 
+  // visibility: hidden;
 
 
 }

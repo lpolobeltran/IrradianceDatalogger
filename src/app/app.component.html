@@ -1,59 +1,128 @@
-<!-- <router-outlet /> -->
-
-
 <main>
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="container">
 
-  <div class="panel">
-
-    <!-- SECCION DE TITULO PRINCIPAL -->
-    <div class="titulo">
+    <!-- TITULO PRINCIPAL -->
+    <div class="container__header">
       <h1>Dashboard</h1>
     </div>
 
-    <!-- SECCION DE FILTROS PARA VISUALIZACION -->
-    <!-- <div class="filtros">
+    <!-- SECCION PRINCIPAL -->
+    <div class="container__main">
 
-      <div>
-        <button (click)="showComponent('home')">
-          <p>Home</p>
-        </button>
+      <!-- Irradiancia patrón -->
+      <app-card
+        [data]="{
+          titulo: 'Irradiancia patrón',
+          stroke: 'blue',
+          irradiacionPatron: irradiacionPatron,
+          unidad: 'W/m²',
+          svg: 'light_mode',
+          myColor: '#ffbb55'
+        }"
+
+      >
+      </app-card>
+
+      <!-- Irradiancia prototipo -->
+      <app-card
+        [data]="{
+          titulo: 'Irradiancia prototipo',
+          stroke: 'blue',
+          irradiacionProto: irradiacionProto,
+          unidad: 'W/m²',
+          svg: 'light_mode',
+          myColor: '#ffbb55'
+        }"
+      >
+      </app-card>
+
+      <!-- Irradiancia panel -->
+      <app-card
+        [data]="{
+          titulo: 'Irradiancia panel',
+          stroke: 'blue',
+          irradiacionPanel: irradiacionPanel,
+          unidad: 'W/m²',
+          svg: 'light_mode',
+          myColor: '#ffbb55'
+        }"
+      >
+      </app-card>
+
+      <!-- Corriente -->
+      <app-card [data]="{
+        titulo: 'Corriente panel',
+        stroke:'blue',
+        corriente:corriente,
+        unidad: 'A',
+        svg:'bolt',
+        myColor: '#7380ec'
+        }">
+      </app-card>
+
+      <!-- Voltaje -->
+      <app-card [data]="{
+        titulo: 'Voltaje panel',
+        stroke:'blue',
+        voltaje:voltaje,
+        unidad: 'V',
+        svg:'bolt',
+        myColor: '#7380ec'
+        }">
+      </app-card>
+
+      <!-- Grafico -->
+      <app-grafic></app-grafic>
+
+      <!-- Temperatura externa -->
+      <app-card [data]="{
+        titulo: 'Temperatura',
+        stroke:'blue',
+        temperatura:temperatura,
+        unidad: '°C',
+        svg:'thermometer',
+        myColor: '#ff7782'
+        }">
+      </app-card>
+
+      <!-- Temperatura interna -->
+      <app-card [data]="{
+        titulo: 'Temperatura interna',
+        stroke:'blue',
+        temperaturaIn:temperaturaIn,
+        unidad: '°C',
+        svg:'thermometer',
+        myColor: '#ff7782'
+        }">
+      </app-card>
+
+      <!-- Humedad -->
+      <app-card [data]="{
+        titulo: 'Humedad ambiental',
+        stroke:'blue',
+        humedad:humedad,
+        unidad: '%',
+        svg:'water_drop',
+        myColor: '#41f1b6'
+        }">
+      </app-card>
+
+      <div class="info">
+
+        <div class="logos">
+          <img src="logo-unimag.png" alt="logo unimagdalena">
+          <img src="logo-electronica.png" alt="logo ingeniería electrónica">
+        </div>
+
+        <div class="by">
+          <span>By: <br></span>
+          <span>Marlon Guerrero · Luis Polo · Nohemith Llanos</span>
+        </div>
+
       </div>
 
-      <div>
-        <button (click)="showComponent('intervalos')">
-          <p>
-            Intervalo de muestreo
-          </p>
-        </button>
-      </div>
-
-      <div>
-        <button (click)="showComponent('comparacionIrradiancia')">
-          <p>
-            Comparación de irradiancia
-          </p>
-        </button>
-      </div>
-
-
-    </div> -->
-
-    <!-- SECCION AL SELECCIONAR FILTRO -->
-
-    <app-home *ngIf="activeComponent === 'home'"></app-home>
-
-    <!-- <app-comparacion-irradiancia *ngIf="activeComponent === 'comparacionIrradiancia'"></app-comparacion-irradiancia>
-
-    <app-intervalos *ngIf="activeComponent === 'intervalos'"></app-intervalos> -->
-
-    <!-- SECCION DE INTERVALOS Y GRAFICO -->
-     <div class="panel-bottom">
-
-      <!-- <div class="inter"></div> -->
-        <app-intervalos></app-intervalos>
-        <app-grafic></app-grafic>
-
-     </div>
+    </div>
 
   </div>
 

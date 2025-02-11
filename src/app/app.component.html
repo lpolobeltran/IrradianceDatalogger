@@ -4,7 +4,21 @@
 
     <!-- TITULO PRINCIPAL -->
     <div class="container__header">
-      <h1>Dashboard</h1>
+
+      <h1>Panel de control</h1>
+
+      <div class="container__intervalo">
+
+        <div class="intervalo">
+          <span class="next"></span>
+          <span class="prev"></span>
+          <div id="box">
+            <h3>60 min</h3>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- SECCION PRINCIPAL -->
@@ -77,7 +91,7 @@
 
       <!-- Temperatura externa -->
       <app-card [data]="{
-        titulo: 'Temperatura',
+        titulo: 'Temperatura externa',
         stroke:'blue',
         temperatura:temperatura,
         unidad: '°C',
@@ -116,7 +130,7 @@
         </div>
 
         <div class="by">
-          <span>By: <br></span>
+          <span>Autores: <br></span>
           <span>Marlon Guerrero · Luis Polo · Nohemith Llanos</span>
         </div>
 

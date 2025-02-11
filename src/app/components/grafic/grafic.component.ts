@@ -90,7 +90,7 @@ let datosPanel = [429.65, 429.33, 403.99, 336.94, 227.95,
               display: true,
               labels: {
                 font: {
-                  size: 10
+                  size: 12
                 }
               }
             },

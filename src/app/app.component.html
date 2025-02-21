@@ -10,10 +10,10 @@
       <div class="container__intervalo">
 
         <div class="intervalo">
-          <span class="next"></span>
-          <span class="prev"></span>
+          <span class="next" (click)="aumentarIntervalo()"></span>
+          <span class="prev" (click)="disminuirIntervalo()"></span>
           <div id="box">
-            <h3>60 min</h3>
+            <h3>{{ intervalo }} min</h3>
           </div>
         </div>
 
@@ -45,7 +45,7 @@
           <div class="container__img">
             <img src="wifi-on.gif" alt="none">
           </div>
-          
+
         </div>
       </div>
 

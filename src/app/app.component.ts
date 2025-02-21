@@ -1,12 +1,5 @@
-import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './pages/home/home.component';
-import { ComparacionIrradianciaComponent } from "./pages/comparacion-irradiancia/comparacion-irradiancia.component";
-import { HistorialAmbientalesComponent } from './pages/historial-ambientales/historial-ambientales.component';
-import { ElectricoComponent } from './pages/electrico/electrico.component';
-import { AmbientalesComponent } from './pages/ambientales/ambientales.component';
-import { IntervalosComponent } from './pages/intervalos/intervalos.component';
 import { GraficComponent } from './components/grafic/grafic.component';
 import { CardComponent } from './components/card/card.component';
 import { GoogleSheetsService } from '../../src/app/services/google-sheets.service';
@@ -16,16 +9,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   standalone: true,
   imports: [
-    HomeComponent,
     FormsModule,
     CommonModule,
-    ComparacionIrradianciaComponent,
-    HistorialAmbientalesComponent,
-    ElectricoComponent,
-    AmbientalesComponent,
-    IntervalosComponent,
     GraficComponent,
-    IntervalosComponent,
     CardComponent,
   ],
   templateUrl: './app.component.html',
@@ -42,6 +28,7 @@ export class AppComponent implements OnInit{
   public irradiacionPatron: number = 0; // Último valor de la temperatura
   public irradiacionProto: number = 0; // Último valor de la temperatura
   public irradiacionPanel: number = 0; // Último valor de la temperatura
+  intervalo: number = 10; // Valor inicial en minutos
 
   // Inyeccion del servicio "GoogleSheetsService"
   constructor(private googleSheetsService: GoogleSheetsService) { } // Servicio de Google Sheets
@@ -66,6 +53,22 @@ export class AppComponent implements OnInit{
       },
       error: (err) => console.error('Error al obtener datos:', err),
     });
+  }
+
+  // Funciones para aumentar y disminuir el intervalo
+
+  aumentarIntervalo() {
+    if (this.intervalo < 120) { // Límite máximo (ejemplo: 3 horas)
+      this.intervalo += 10;
+      // this.enviarIntervalo();
+    }
+  }
+
+  disminuirIntervalo() {
+    if (this.intervalo > 10) { // Límite mínimo
+      this.intervalo -= 10;
+      // this.enviarIntervalo();
+    }
   }
 
 }

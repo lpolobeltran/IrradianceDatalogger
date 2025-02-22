@@ -5,19 +5,15 @@
 // ----------------------------
 
 canvas{
-  background-color: none;
-  // background-color: transparent !important;
-  // max-width: 100%;
-  // max-height: 100%;
-  // border-radius: styles.$card-border-radius;
+  background-color: blue;
+  background-color: white;
+  max-width: 280px;
+  max-height: 200px;
+  border-radius: styles.$card-border-radius;
   // padding-top: styles.$card-padding;
   // padding-left: styles.$card-padding;
   // padding-right: styles.$card-padding;
+  padding: 0;
   padding-bottom: 0;
   font-size: styles.$main-font;
-  // box-sizing: border-box;
-}
-
-#grafic {
-  background-color: transparent; /* Cambia a tu color deseado */
 }

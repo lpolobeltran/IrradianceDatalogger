@@ -1,11 +1,33 @@
 <div class="comparacion-irradiancia">
 
-  <div class="comparacion-irradiancia_left">
+  <div class="comparacion-irradiancia__left">
+
+    <!-- Irradiancia prototipo -->
+    <app-card [data]="{
+      titulo: 'Irradiancia prototipo',
+      stroke:'blue',
+      irradiacionProto:irradiacionProto,
+      unidad: 'W/m²',
+      svg:'light_mode',
+      myColor: '#ffbb55'
+      }">
+    </app-card>
+
+    <!-- Irradiancia panel -->
+    <app-card [data]="{
+      titulo: 'Irradiancia panel',
+      stroke:'blue',
+      irradiacionPanel:irradiacionPanel,
+      unidad: 'W/m²',
+      svg:'light_mode',
+      myColor: '#ffbb55'}">
+    </app-card>
+
+  </div>
+
+  <div class="comparacion-irradiancia__rigth">
     <app-grafic></app-grafic>
   </div>
 
-  <div class="comparacion-irradiancia_rigth">
-    <app-grafic></app-grafic>
-  </div>
 
 </div>

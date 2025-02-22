@@ -1,23 +1,60 @@
 <div class="card">
 
-  <div class="card__left">
-    <h3> {{data.titulo}} </h3>
+  <!-- SEGMENTO IZQUIERDO DE CARD -->
 
-    <div>
-      <span class="material-symbols-outlined">
-        thermometer
-      </span>
-    </div>
+    <div class="card__left">
+
+      <div class="item">
+        <div class="waves-container">
+          <span class="material-symbols-outlined" [style.background-color]="data.myColor" [style.--color1]="data.myColor">
+            {{data.svg}}
+          </span>
+        </div>
+      </div>
+
+    <h3 class="item"> {{data.titulo}} </h3>
+
+    <h1 class="item_principal"> {{data.temperatura || data.humedad || data.temperaturaIn || data.corriente || data.voltaje ||
+      data.irradiacionPatron || data.irradiacionProto || data.irradiacionPanel || data.potencia}} <span>{{data.unidad}}</span></h1>
+
+    <p class="item">Tiempo real</p>
   </div>
 
+  <!-- SEGMENTO DERECHO DE CARD -->
+
   <div class="card__rigth">
-    <svg [style.--dashoffset]="calculateDashOffset(data.temperatura)">
-      <circle class="bg" cx="70" cy="100" r="40"/>
-      <circle class="meter" cx="70" cy="100" r="40"/>
+
+    <svg
+
+      [attr.key]="dataKey"
+      [ngStyle]="{ '--color-progreso': data.myColor }">
+
+      <circle class="bg" cx="70" cy="100" r="40" />
+
+      <circle
+        class="meter" cx="70" cy="100" r="40"
+        [ngStyle]="{ 'stroke-dashoffset': dashOffset, 'transition': 'stroke-dashoffset 1s ease-out' }"
+      />
+
     </svg>
+
     <div class="card__rigth__number">
-      <p> {{data.temperatura}} °C</p>
+
+      <p> {{
+        data.temperatura !== null && data.temperatura !== undefined ? calcularPorcentaje(data.temperatura, 100) :
+        data.humedad !== null && data.humedad !== undefined ? calcularPorcentaje(data.humedad, 100) :
+        data.temperaturaIn !== null && data.temperaturaIn !== undefined ? calcularPorcentaje(data.temperaturaIn, 100) :
+        data.corriente !== null && data.corriente !== undefined ? calcularPorcentaje(data.corriente, 30) :
+        data.voltaje !== null && data.voltaje !== undefined ? calcularPorcentaje(data.voltaje, 25) :
+        data.irradiacionPatron !== null && data.irradiacionPatron !== undefined ? calcularPorcentaje(data.irradiacionPatron , 1500) :
+        data.irradiacionProto !== null && data.irradiacionProto !== undefined ? calcularPorcentaje(data.irradiacionProto , 1500) :
+        data.irradiacionPanel !== null && data.irradiacionPanel !== undefined ? calcularPorcentaje(data.irradiacionPanel , 1500) :
+        data.potencia !== null && data.potencia !== undefined ? calcularPorcentaje(data.potencia , 750) :
+        ''}} %
+      </p>
+
     </div>
+
   </div>
 
 </div>

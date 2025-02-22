@@ -1,54 +1,175 @@
-<!-- <router-outlet /> -->
-
-
 <main>
+  <app-prueba>
+    
+  </app-prueba>
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="container">
 
-  <div class="panel">
+    <!-- TITULO PRINCIPAL -->
+    <div class="container__header">
 
-    <!--------------------------------------------------------------------------------------------------------------------------->
+      <h1>Panel de control</h1>
 
-    <!-- SECCION DE TITULO PRINCIPAL -->
-    <div class="titulo">
-      <h1>Panel de parámetros</h1>
+      <div class="container__intervalo">
+
+        <div class="intervalo">
+          <span class="next" (click)="aumentarIntervalo()"></span>
+          <span class="prev" (click)="disminuirIntervalo()"></span>
+          <div id="box">
+            <h3>{{ intervalo }} min</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div class="container__conectado">
+
+        <div class="conectado">
+          <div id="conectado">
+            <h3>conectado</h3>
+          </div>
+        </div>
+
+      </div> -->
+
+      <div class="container__ver-historial-datos">
+
+        <div class="ver-historial-datos">
+          <h3><a href="https://docs.google.com/spreadsheets/d/1_RNYyiVqPWUOVmAsm5kKMKWJNHf_8S7gBjW8pai-0aQ/edit?usp=sharing" target="_blank">Ver historial de datos</a></h3>
+        </div>
+
+      </div>
+
+      <div class="container__conexion">
+        <div class="conexion">
+
+          <h3>Conectado</h3>
+
+          <div class="container__img">
+            <img src="wifi-on.gif" alt="none">
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
-    <!--------------------------------------------------------------------------------------------------------------------------->
+    <!-- SECCION PRINCIPAL -->
+    <div class="container__main">
 
-    <!-- SECCION DE FILTROS PARA VISUALIZACION -->
-    <div class="filtros">
+      <!-- Irradiancia patrón -->
+      <app-card
+        [data]="{
+          titulo: 'Irradiancia patrón',
+          stroke: 'blue',
+          irradiacionPatron: irradiacionPatron,
+          unidad: 'W/m²',
+          svg: 'light_mode',
+          myColor: '#ffbb55'
+        }"
 
-      <div>
-        <button>
-          Home
-        </button>
-      </div>
-      <div>
-        Parámetros ambientales
-      </div>
-      <div>
-        Parámetros eléctricos
-      </div>
-      <div>
-        Historial de parámetros ambientales
-      </div>
-      <div>
-        Historial de parámetros eléctricos
-      </div>
-      <div>
-        Comparación de irradiancia
-      </div>
-      <div>
-        Intervalo de muestreo
+      >
+      </app-card>
+
+      <!-- Irradiancia prototipo -->
+      <app-card
+        [data]="{
+          titulo: 'Irradiancia prototipo',
+          stroke: 'blue',
+          irradiacionProto: irradiacionProto,
+          unidad: 'W/m²',
+          svg: 'light_mode',
+          myColor: '#ffbb55'
+        }"
+      >
+      </app-card>
+
+      <!-- Irradiancia panel -->
+      <app-card
+        [data]="{
+          titulo: 'Irradiancia panel',
+          stroke: 'blue',
+          irradiacionPanel: irradiacionPanel,
+          unidad: 'W/m²',
+          svg: 'light_mode',
+          myColor: '#ffbb55'
+        }"
+      >
+      </app-card>
+
+      <!-- Corriente -->
+      <app-card [data]="{
+        titulo: 'Corriente panel',
+        stroke:'blue',
+        corriente:corriente,
+        unidad: 'A',
+        svg:'bolt',
+        myColor: '#7380ec'
+        }">
+      </app-card>
+
+      <!-- Voltaje -->
+      <app-card [data]="{
+        titulo: 'Voltaje panel',
+        stroke:'blue',
+        voltaje:voltaje,
+        unidad: 'V',
+        svg:'bolt',
+        myColor: '#7380ec'
+        }">
+      </app-card>
+
+      <!-- Grafico -->
+      <app-grafic></app-grafic>
+
+      <!-- Temperatura externa -->
+      <app-card [data]="{
+        titulo: 'Temperatura externa',
+        stroke:'blue',
+        temperatura:temperatura,
+        unidad: '°C',
+        svg:'thermometer',
+        myColor: '#ff7782'
+        }">
+      </app-card>
+
+      <!-- Temperatura interna -->
+      <app-card [data]="{
+        titulo: 'Temperatura interna',
+        stroke:'blue',
+        temperaturaIn:temperaturaIn,
+        unidad: '°C',
+        svg:'thermometer',
+        myColor: '#ff7782'
+        }">
+      </app-card>
+
+      <!-- Humedad -->
+      <app-card [data]="{
+        titulo: 'Humedad ambiental',
+        stroke:'blue',
+        humedad:humedad,
+        unidad: '%',
+        svg:'water_drop',
+        myColor: '#41f1b6'
+        }">
+      </app-card>
+
+      <div class="info">
+
+        <div class="logos">
+          <img src="logo-unimag.png" alt="logo unimagdalena">
+          <img src="logo-electronica.png" alt="logo ingeniería electrónica">
+        </div>
+
+        <div class="by">
+          <span>Autores: <br></span>
+          <span>Marlon Guerrero · Luis Polo · Nohemith Llanos</span>
+        </div>
+
       </div>
 
     </div>
-
-    <!--------------------------------------------------------------------------------------------------------------------------->
-
-    <!-- SECCION AL SELECCIONAR FILTRO -->
-    <app-home></app-home>
-
-    <!--------------------------------------------------------------------------------------------------------------------------->
 
   </div>
 

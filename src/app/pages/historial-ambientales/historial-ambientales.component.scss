@@ -1,5 +1,3 @@
-@use "../../../../public/styles.scss";
-
 *{
   margin: 0;
   padding: 0;
@@ -11,74 +9,37 @@
   box-sizing: border-box;
 }
 
-.home{
+.historial-ambientales{
   display: grid;
   grid-template-rows: 0.3fr 0.5fr;
-  gap: 25px;
+  gap: 50px;
   // justify-content: space-evenly;
   width: 100%;
   height: 100%;
 }
 
-.home__top{
-  display: grid;
-  // position: absolute;
-  // justify-content:space-between;
-  // gap: 28px;
+.historial-ambientales__top{
+  display: flex;
+  justify-content: space-between;
    /* El primer y último contenedor tienen un tamaño fijo, los intermedios se reparten el espacio */
   justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
   // flex-direction: column;
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-  grid-template-columns: auto auto;
-  // visibility: hidden;
-
 }
 
-.home__top__left{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 5px;
-}
-.home__top__right{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 5px;
-  :nth-child(1){
-    position: relative;
-    // top: -200px;
-    top: 147px;
-    // left: 10px;
-    // right: -200;
-    border-radius: styles.$card-border-radius;
-    height: 135px;
-  }
-  :nth-child(2){
-    position: relative;
-    // top: -200px;
-    // top: -383px;
-    top: 147px;
-
-    // left: 10px;
-    // right: -200;
-    border-radius: styles.$card-border-radius;
-    height: 135px;
-  }
-}
-
-
-.home__bottom{
+.historial-ambientales__bottom{
   display: flex;
-  justify-content: start;
-  gap: 5px;
-  margin-left: 9px;
-  justify-items: center; /* Asegura que los elementos se estiren para ocupar todo el espacio disponible */
-
-  // visibility: hidden;
-
-
+  height: 200px;
 }
+
 app-card{
-  width: 258px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+app-grafic{
+  width: 280px;
   display: flex;
   justify-content: center;
 }

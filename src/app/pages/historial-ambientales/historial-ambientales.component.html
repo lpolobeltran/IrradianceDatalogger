@@ -1,0 +1,59 @@
+<div class="historial-ambientales">
+
+  <!-- SEGMENTO SUPERIOR DE LA PAGINA HOME -->
+
+  <div class="historial-ambientales__top">
+
+    <!-- Temperatura externa -->
+    <app-card [data]="{
+      titulo: 'Temperatura',
+      stroke:'blue',
+      temperatura:temperatura,
+      unidad: '°C',
+      svg:'thermometer',
+      myColor: '#ff7782'
+      }">
+    </app-card>
+
+    <!-- Humedad -->
+    <app-card [data]="{
+      titulo: 'Humedad ambiental',
+      stroke:'blue',
+      humedad:humedad,
+      unidad: '%',
+      svg:'water_drop',
+      myColor: '#41f1b6'
+      }">
+    </app-card>
+
+    <!-- Temperatura interna -->
+    <app-card [data]="{
+      titulo: 'Temperatura interna',
+      stroke:'blue',
+      temperaturaIn:temperaturaIn,
+      unidad: '°C',
+      svg:'thermometer',
+      myColor: '#ff7782'
+      }">
+    </app-card>
+
+    <!-- Corriente -->
+    <app-card [data]="{
+      titulo: 'Irradiancia prototipo',
+      stroke:'blue',
+      irradiacionProto:irradianciaProto,
+      unidad: 'W/m²',
+      svg:'light_mode',
+      myColor: '#ffbb55'
+      }">
+    </app-card>
+
+  </div>
+
+  <div class="historial-ambientales__bottom">
+
+    <app-grafico-lineal></app-grafico-lineal>
+
+  </div>
+
+</div>

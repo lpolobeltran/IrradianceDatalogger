@@ -1,0 +1,94 @@
+@use "../../../../public/styles.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: styles.$main-font;
+  font-weight: 200;
+}
+
+.intervalos {
+  display: grid;
+  grid-template-rows: 65px auto;
+  width: 95%;
+  height: 100%;
+}
+
+.intervalos__top {
+  font-size: 1.1rem;
+  width: 100%;
+  font-weight: 500;
+  color: white;
+  display: grid;
+  align-items: center;
+}
+
+.intervalos__top h3 {
+  font-size: 1.1rem;
+  width: 100%;
+  font-weight: 500;
+  color: white;
+}
+
+.intervalos__buttom {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  align-items: first baseline;
+}
+
+body {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  --glow-color: white;
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+
+  border: 0.25em solid var(--glow-color);
+  padding: 5px 12px;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border-radius: 0.7em;
+  outline: none;
+  width: auto;
+  position: relative;
+  transition: all 0.3s;
+}
+
+button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+/* Efecto cuando el botón está activo o al hacer hover */
+button:hover,
+button.active {
+  color: #303131;
+  background-color: var(--glow-color);
+  box-shadow:
+    0 0 0.8em 0.2em var(--glow-color),
+    0 0 0 0.2em var(--glow-color),
+    inset 0 0 0.1em 0.1em var(--glow-color);
+}

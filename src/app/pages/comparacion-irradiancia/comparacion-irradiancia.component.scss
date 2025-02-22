@@ -1,3 +1,5 @@
+@use "../../../../public/styles.scss";
+
 *{
   margin: 0;
   padding: 0;
@@ -11,11 +13,36 @@
 
 .comparacion-irradiancia{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // grid-template-columns: 20% 80%;
+  // justify-content: ;
+  justify-content: space-around;
+  // align-items: center;
+  width: 100%;
 }
-.comparacion-irradiancia div{
-  // background-color:;
-  width: 600px;
-  height: 300px;
+
+.comparacion-irradiancia__left {
+  width: 20%;
+  height: 470px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // gap: 20px;
+  // align-items: baseline;
+  // justify-items: end;
 }
+
+.comparacion-irradiancia .comparacion-irradiancia__rigth {
+  width: 900px;
+  height: 470px;
+  background-color: transparent;
+  // border-radius: styles.$card-border-radius;
+  // box-shadow: styles.$box-shadow;
+  // transition: all 300ms ease;
+  margin-top: 20px;
+}
+
+// .comparacion-irradiancia__rigth:hover {
+//   box-shadow: none;
+// }
+

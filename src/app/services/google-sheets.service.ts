@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'; // Marca la clase como un servicio
 import { HttpClient } from '@angular/common/http'; // Permite hacer solicitudes HTTP, si o si debe ponerse
 import { Observable, BehaviorSubject, interval, switchMap } from 'rxjs'; // Ayuda a manejar datos que llegan de manera asíncrona
+import { catchError, throwError } from 'rxjs'; // Asegúrate de importar estos operadores
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Observable, BehaviorSubject, interval, switchMap } from 'rxjs'; // Ayud
 })
 
 export class GoogleSheetsService {
-  private apiUrl = 'https://script.googleusercontent.com/macros/echo?user_content_key=Y7GxryvqFMp5ANsFkj_18sRyGhvWJOhV8CDKOsCqPTs_JUI_OXvFRGufpIXgxZopPTt9pvpTcwJNLkq_JFRVprdCMciSj1Msm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGv69DWB_nWJMahCEMl0qd1PUO1fpuSZjRa0JCkL-MKQNMYgbpU8W3I_jD_r1dVU94UX_oPhl7_TI1dc2GGX5cR9eXB04gu2Lw&lib=M-yaEGDJ7e3igvdJIeyNe_Thu1KL008Ao'; // Aquí debes poner el enlace de tu mini API
+  private apiUrl = 'https://script.google.com/macros/s/AKfycbwZF4BczprSf9A2Chp9Gnub2-QtZcYfapDbrr6wG1v-1ZhZiWg0dFZUtUic5VTc-A2A/exec'; // Aquí debes poner el enlace de tu mini API
   // private temperatura: number = 0; // Almacena la última temperatura recibida
   private latestData = new BehaviorSubject<any>(this.getDataFromLocalStorage()); // Inicializa con datos de localStorage si existen
 
@@ -53,6 +54,17 @@ export class GoogleSheetsService {
   // Método para obtener el último dato (temperatura) del BehaviorSubject
   get latestTemperature(): Observable<any> {
     return this.latestData.asObservable(); // Devuelve un observable para que los componentes se suscriban
+  }
+
+  enviarIntervalo(intervalo: number): Observable<any> {
+    const body = { intervalo };
+
+    return this.http.post<any>(this.apiUrl, body).pipe(
+      catchError((error) => {
+        console.error('Error al enviar el intervalo:', error);
+        return throwError(() => new Error('Error en la solicitud de envío de intervalo'));
+      })
+    );
   }
 
 }

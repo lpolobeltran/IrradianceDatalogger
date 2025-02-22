@@ -4,6 +4,7 @@ import { GraficComponent } from './components/grafic/grafic.component';
 import { CardComponent } from './components/card/card.component';
 import { GoogleSheetsService } from '../../src/app/services/google-sheets.service';
 import { Component, OnInit } from '@angular/core';
+import { PruebaComponent } from './prueba/prueba.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { Component, OnInit } from '@angular/core';
     CommonModule,
     GraficComponent,
     CardComponent,
+    PruebaComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -58,16 +60,20 @@ export class AppComponent implements OnInit{
   // Funciones para aumentar y disminuir el intervalo
 
   aumentarIntervalo() {
-    if (this.intervalo < 120) { // Límite máximo (ejemplo: 3 horas)
-      this.intervalo += 10;
-      // this.enviarIntervalo();
-    }
+    this.intervalo += 10;
+    this.googleSheetsService.enviarIntervalo(this.intervalo).subscribe({
+      next: () => console.log('Intervalo enviado correctamente'),
+      error: (err) => console.error('Error al enviar el intervalo:', err)
+    });
   }
 
   disminuirIntervalo() {
     if (this.intervalo > 10) { // Límite mínimo
       this.intervalo -= 10;
-      // this.enviarIntervalo();
+      this.googleSheetsService.enviarIntervalo(this.intervalo).subscribe({
+        next: () => console.log('Intervalo enviado correctamente'),
+        error: (err) => console.error('Error al enviar el intervalo:', err)
+      });
     }
   }
 
